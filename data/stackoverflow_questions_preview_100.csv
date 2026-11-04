@@ -1,0 +1,522 @@
+QuestionId,Title,Body,Tags,Score,ViewCount,AnswerCount,CommentCount,FavoriteCount,CreationDate,LastEditDate,AcceptedAnswerId,UserId,UserReputation
+80012966,Many wordpress editing aspects affecting since PHP issue,"<p>I'm just wondering if anyone can tell me what exactly is causing my WordPress site to be unable to edit to many different kinds of things.</p>
+<p>It started with the global php crash which I get might still not be fully patched amongst all hosts, I'm just wondering what the common thread might be. I'm not super well versed in the backend of website building but I've been able to understand what...[truncated]",|php|wordpress|plugins|,-1,3,0,0,0,2026-10-27 21:51:58,,,33241767,1
+80012962,How do I do a proper chase camera without breaking culling?,"<p>In ThreeJS and Chrome, with a perspective camera designed to follow my character, updating the position of the camera based on current character position and facing is making some objects disappear, like they are being culled even though they should be in view. Added wireframe to true to verify it is not an asset issue. They are simply not being drawn even if I go back and set frustumCulled to ...[truncated]",|three.js|camera|culling|,0,37,0,0,0,2026-10-27 20:22:27,,,3851244,198
+80012958,Tkinter Toplevel Windows Persisting in Memory When Deleted,"<p>I'm working on a notepad program for Python and Tkinter.</p>
+<p>Whenever a Toplevel is created and then destroyed, it still seems to exist in memory and in Tkinter. I checked both the name of the Toplevel when created, which increases with each subsequent Toplevel after the first, and Task Manager, where the memory usage for the application increases a small amount each time the Toplevel is clo...[truncated]",|python|tkinter|garbage-collection|toplevel|,0,30,0,0,0,2026-10-27 19:50:42,,,33240080,1
+80012941,Home Assistant and SDM API enterprises.devices.list returns 500 INTERNAL; structures.list works,"<h1>SDM API <code>enterprises.devices.list</code> returns 500 INTERNAL; <code>structures.list</code> works</h1>
+<h2>Summary</h2>
+<p><code>GET https://smartdevicemanagement.googleapis.com/v1/enterprises/{project}/devices</code> consistently returns HTTP 500:</p>
+<pre class=""lang-json prettyprint-override""><code>{&quot;error&quot;: {&quot;code&quot;: 500, &quot;message&quot;: &quot;Internal error en...[truncated]",|nest-device-access|,-6,69,0,2,0,2026-10-27 17:55:22,,,33241435,1
+80012937,Amadeus Fare_MasterPricerTravelBoardSearch 21.4: how to interpret two cabinProduct elements in one groupOfFares?,"<p>I integrate with the Amadeus Web Services SOAP API (<code>Fare_MasterPricerTravelBoardSearch</code>). In version 21.4, the cardinality of <code>cabinProduct</code> inside <code>groupOfFares/productInformation</code> changed from 1 to 2.</p>
+<p>My code reads one <code>cabinProduct</code> per <code>groupOfFares</code> and takes <code>rbd</code> (booking class) and <code>avlStatus</code> (remainin...[truncated]",|soap|integration|amadeus|fare|,-2,30,0,0,0,2026-10-27 17:35:21,,,8730693,1
+80012932,tryCatch Error Function not Returning Data Frame in R Studio,"<p>I have a tryCatch block where I'm trying to set one data frame and bind it to another inside the error function, but nothing is outputting. I added a print function in there to make sure it's even getting to the error function and it is printing the message. The initial expression is successfully generating a data frame and binding it.</p>
+<p>the empty data frames before the tryCatch are so tha...[truncated]",|r|,0,69,2,6,0,2026-10-27 17:25:06,,,32866561,9
+80012931,Owl Carousel product links don't respond to the first tap on Android after swiping,"<h2>Owl Carousel product links don't work after swiping on Android</h2>
+<p>I'm experiencing a problem with Owl Carousel on my Laravel e-commerce website.</p>
+<h3>Problem description</h3>
+<p>On my Redmi 10 running Android 10 with Chrome for Android, I open my homepage and swipe a product carousel, such as Best Sellers, New Arrivals, or Popular Products.</p>
+<p>After swiping, I tap a product image, ...[truncated]",|javascript|jquery|owl-carousel|,-4,50,0,4,0,2026-10-27 17:23:41,,,9440558,13
+80012923,How to change the query with a number of records condition in all groups and with the sum for a specific column?,"<p>My script:</p>
+<pre><code>-- DROP TABLE IF EXISTS test;
+
+CREATE TABLE IF NOT EXISTS test
+(
+    id smallserial,
+    date_pr date,
+    num smallint,
+    naim text,
+    pr numeric(19,4),
+    txt text,
+    CONSTRAINT test_pkey PRIMARY KEY (id)
+)
+
+INSERT INTO test (date_pr, num, naim, pr, txt) VALUES
+('2025-02-01', 1, 'naim_01', 11.4501, 'txt_11'),
+('2025-02-01', 2, 'naim_02', 12.3302, 'txt_12'),
+('...[truncated]",|sql|postgresql|,1,97,1,0,0,2026-10-27 16:50:50,2026-10-27 17:23:17,80012934,2299896,206
+80012913,ggplot2 custom graph function is adding values/variables together. Is there a better way to fix it?,"<p>I am trying to make a custom graphing function that can be applied to a number of similar datasets where the name of the x-axis variable might be different between data frames.</p>
+<p>Here's an example of what I'm working with</p>
+<pre><code>library(tidyverse)
+library(ggplot2)
+
+#sample dataframe
+df &lt;- data.frame(item = c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;), qty = c(1, 2, 3))
+
+#graph...[truncated]",|r|function|ggplot2|,0,48,0,2,0,2026-10-27 16:09:25,,,31647074,39
+80012905,How can I safely publish a report for a fork PR when actions/checkout@v7 blocks checkout in workflow_run?,"<p>I maintain a GitHub repository that accepts pull requests from forks. My workflow runs tests and generates a JSON report for each PR. After the workflow completes, I use a separate <code>workflow_run</code> workflow to publish the report as a comment on the pull request.</p>
+<p>I separated these workflows because the first one executes code from the PR and should have limited permissions, while...[truncated]",|advice|github-actions|pull-request|github-actions-artifacts|,1,48,0,1,0,2026-10-27 15:43:58,,,33234201,39
+80012904,Most efficient way to fill a stream with zeros?,"<p>I have <a href=""https://learn.microsoft.com/en-us/dotnet/api/system.io.stream"" rel=""nofollow noreferrer""><code>Stream</code></a> from opening a file in the filesystem, and a want to replace the contents of this stream with zeros. I.e. each <code>byte</code> of the stream should become <code>0</code>. I wrote the extension method <code>FillWithZeros</code> below, but I am not sure if it's the mo...[truncated]",|c#|performance|stream|memory-efficient|,-1,143,1,5,0,2026-10-27 15:31:49,,80012918,11178549,47156
+80012903,"Is using PHP's official minimal source-backports for PHP 7.4/8.0/8.1 recommended for production, and what are the best practices for use them?","<p>Following the official PHP security advisory published on October 21, 2026 regarding the critical unauthenticated RCE vulnerabilities (<strong>CVE-2026-109618</strong> and <strong>CVE-2026-109619</strong>, dubbed <em>PHP2Shell</em>), the upstream PHP team released official patches for supported versions (PHP 8.2.35, 8.3.36, 8.4.27, and 8.5.12).</p>
+<p>Because older releases are officially End-o...[truncated]",|best-practices|php|security|cve|,0,96,2,5,0,2026-10-27 15:15:27,2026-10-27 18:08:52,,6624155,84
+80012902,iOS Safari: window.open with the same window name does nothing after the popup tab was closed with the back button,"<p>On iOS Safari, a page opens a popup with <code>window.open()</code> and a fixed window name.
+On iPhone the popup opens as a new tab. If the user leaves that tab with the <strong>back button</strong>
+(Safari closes the tab and returns to the opener), calling <code>window.open()</code> again with the
+<strong>same name</strong> does nothing: no tab is shown and <code>window.open()</code> returns <...[truncated]",|javascript|ios|safari|mobile-safari|window.open|,-4,50,0,1,0,2026-10-27 15:10:10,,,21930816,1
+80012900,mysql_native_password on users mysql.session and mysql.sys,"<p>My version of mysql currently has the users <code>mysql.session</code> and <code>mysql.sys</code> using the <code>mysql_native_password</code> authentication plugin.</p>
+<p>All other users are set to use <code>caching_sha2_password</code>.</p>
+<p>Ubuntu will not update to the latest release when mysql still has user accounts using <code>mysql_native_password</code>, with this message</p>
+<block...[truncated]",|mysql|ubuntu|mysql-8.0|,0,63,0,15,0,2026-10-27 15:04:56,2026-10-27 15:12:13,,27526042,25
+80012896,How to code fuzzy operator `~` in regular language?,"<p>I'm writing new language for AI. In neuro-symbolic binding <code>infer| confidence ~ 0.95</code> fuzzy operator <code>~</code> should be coded inside as <code>&gt;=</code> comparison: <code>confidence &gt;= 0.95</code> or other way?</p>
+",|artificial-intelligence|,-6,98,0,4,0,2026-10-27 14:42:34,,,32783813,1
+80012891,phpspreadsheet setCellValue throwing file corrupt or extension error,"<p>This line of code is causing a phpshreadsheet error:</p>
+<pre><code>$spreadsheet-&gt;getActiveSheet()
+    -&gt;setCellValue([3, 6], '='.$TotalDoughWeight.'/1000');                      
+</code></pre>
+<p>Getting a file corrupt or xlsx extension error on above code. $TotalDoughWeight exists and is numeric. Error message:</p>
+<p>Excel cannot open the file'filename.XIsx' because the file format or ...[truncated]",|phpspreadsheet|,-6,60,0,1,0,2026-10-27 14:30:56,2026-10-27 16:06:53,,9058832,147
+80012886,"tail doesn't work inside GitLab CI/CD pipeline, Fedora 44 Docker image","<p>We use the standard Fedora 44 Docker image in our GitLab CI/CD pipeline. At the end, in the <code>after_script</code> section of the pipeline, we collect some metadata to send out via an email. In this data collection, I use the <code>tail</code> command and some <code>awk</code> as I am only interested in a specific section of the last line. However, no matter what I try, the command just does...[truncated]",|linux|bash|docker|gitlab|gitlab-ci|,-3,78,3,1,0,2026-10-27 14:20:11,2026-10-27 14:44:48,,33240869,1
+80012875,How can I constrain AI coding assistants to implement only specified requirements?,"<p>I've been using AI coding assistants such as Cursor, GitHub Copilot, and Antigravity for software development.</p>
+<p>My current approach involves writing natural-language prompts that describe a task and its requirements. However, the generated changes sometimes extend beyond the requested scope, introducing unnecessary abstractions, refactoring unrelated code, or implementing features that we...[truncated]",|advice|artificial-intelligence|prompt|,-8,95,0,2,0,2026-10-27 13:56:55,,,33180128,1
+80012868,How do I continuously mirror GitHub issues to Codeberg?,"<p>I am looking to create a mirror of my GitHub project to Codeberg. When initially migrating the repository through Codeberg, there's <a href=""https://codeberg.org/Recommendations/Mirror_to_Codeberg#step-1-initial-repository-migration-from-github"" rel=""nofollow noreferrer"">an option to migrate issues, pull requests, and labels</a>. However, this appears to be a one-time migration, meaning any iss...[truncated]",|github|migration|codeberg|,-1,89,0,2,0,2026-10-27 13:21:00,2026-10-27 14:28:40,,3357935,28528
+80012856,SwiftUI Sticky Header Tabs centering tab pages content instead of showing the top,"<pre><code></code></pre>
+<p>The implementation on this link <a href=""https://github.com/cassiewallace/swiftui-sticky-header-tabs"" rel=""nofollow noreferrer"">https://github.com/cassiewallace/swiftui-sticky-header-tabs</a> results in just the middle of the tab pages scrollview content being shown.</p>
+<p>Could some one point me to the line that causes this please</p>
+<pre class=""lang-swift prettyprin...[truncated]",|swift|swiftui|uikit|uipangesturerecognizer|,-2,67,0,0,0,2026-10-27 12:46:20,,,4935761,612
+80012836,Why does a CSS Grid item overflow its column when it contains a long URL?,"<p>I'm building a responsive two-column layout using CSS Grid. The layout works as expected with normal text, but when one column contains a long URL without spaces, the content can extend beyond its column and cause horizontal overflow.</p>
+<p>Here is a simplified example:</p>
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""true"" data-babel=""false"" data-babel-preset-react=""...[truncated]",|css|responsive-design|css-grid|,-2,49,0,3,0,2026-10-27 11:18:08,2026-10-27 11:22:11,,33039920,1
+80012797,TYPO3 13.x BE user permissions upload allowed file extensions,"<p>I have set</p>
+<pre><code>[SYS][features][security.system.enforceAllowedFileExtensions] = true
+</code></pre>
+<p>and</p>
+<pre><code>$GLOBALS['TYPO3_CONF_VARS']['SYS']['textfile_ext']
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['mediafile_ext']
+$GLOBALS['TYPO3_CONF_VARS']['SYS']['miscfile_ext']
+</code></pre>
+<p>But that is for all users. How can I set permissions for BE usergroups or user?</p>
+",|upload|typo3|,-3,77,0,1,0,2026-10-27 08:38:00,2026-10-27 14:16:16,,10763462,5
+80012796,Does std::weak_ptr prevent memory release because it owns the control block?,"<p>I keep encountering this statement, (copied by people, &quot;gathered&quot; by <em>abominable intellegence</em> assistants, etc), but <em>no references</em> ever are given:</p>
+<blockquote>
+<p>In standard C++ implementations (like <code>std::make_shared</code>), the object and the control block are allocated together in a <strong>single contiguous block of memory</strong>.</p>
+</blockquote>
+<p>...[truncated]",|c++|shared-ptr|weak-ptr|,-1,139,0,4,0,2026-10-27 08:37:56,,,2742717,15769
+80012795,"UVM_WARNING : map ‘reg_map’ does not seem to be initialized correctly, check that the top register model is locked()","<p>In my testbench environment (TB env), I have a total of 5 interfaces (1 I2C and 4 SPIs) which can access the reg bank concurrently. And the <code>default_map</code>, provided by the <code>regmodel</code>, won’t be enough to achieve this parallelism. Hence, I have added 5 different <code>reg_maps</code> (1 for i2c and 1 for each SPI).</p>
+<p>The <code>regmodel</code> is generated by a script and...[truncated]",|system-verilog|uvm|,-4,55,0,3,0,2026-10-27 08:36:18,2026-10-27 12:06:19,,3607286,1
+80012793,How to avoid rendering delays when switching from text to dynamic selects?,"<p>I'm using Vue 3 with TypeScript and Element Plus to render a dynamic form.</p>
+<p>In view mode, fields are displayed as text. In edit mode, they are replaced with <code>el-select</code> components using <code>v-if / v-else</code>.</p>
+<p>When switching to edit mode, there's a noticeable delay before the selects appear. All data is already loaded, so this is a rendering issue, not an HTTP reques...[truncated]",|best-practices|javascript|vue.js|vuejs3|,2,149,2,0,0,2026-10-27 08:02:43,2026-10-27 08:49:43,80012807,33239440,19
+80012779,How can I add a “A Closer Look” video to my iOS app’s App Store listing?,"<p><a href=""https://i.sstatic.net/82Qkzf7T.png"" rel=""nofollow noreferrer""><img src=""https://i.sstatic.net/82Qkzf7T.png"" alt=""enter image description here"" /></a>I have an iOS app and want to add an <strong>“A Closer Look” promotional video</strong> to its App Store listing, similar to the promotional videos shown for some apps.</p>
+<p>I have created a promotional video showcasing my app’s UI and f...[truncated]",|ios|app-store|app-store-connect|,-10,89,1,0,0,2026-10-27 07:10:02,,,3752143,5279
+80012776,Need help for this problem : STM32G070 – PB15 GPIO input always reads LOW with internal pull-up enabled,"<p>I'm facing an issue while reading a tactile push button connected to PB15 on an STM32G070 series MCU.</p>
+<p>The GPIO is configured as an input with an internal pull-up resistor. My expected behavior is:</p>
+<ul>
+<li>Button not pressed: GPIO reads HIGH (1).</li>
+<li>Button pressed: GPIO reads LOW (0).</li>
+</ul>
+<p>However, I'm always getting LOW (0), regardless of whether the button is pressed...[truncated]",|debugging|embedded|stm32|hardware|,-6,62,0,6,0,2026-10-27 06:57:49,2026-10-27 12:03:57,,33240052,1
+80012768,error loading model: unknown model architecture: 'mllama',"<p>Ollama returns the following error when my application server tries to send a prompt to it and get back a response.</p>
+<p>The prompt contains instructions to perform Optical Character Recognition (OCR) using <code>llama3.2-vision</code> model. I tried running my app server on both Ubuntu and Windows and receive the same error as response.</p>
+<p>Please find below, the exact error message retur...[truncated]",|ollama|,-10,67,0,2,0,2026-10-27 06:03:03,2026-10-27 06:11:53,,2803728,1
+80012761,Why does MSVC Standard Library std::expected explicitly delete the copy assignment/constructor after defining them,"<p>I'm studying the STL and I'm looking at <code>std::expected</code>.<br />
+I see:</p>
+<pre><code>expected(const expected&amp;) = delete;
+</code></pre>
+<p>and:</p>
+<pre><code>expected&amp; operator=(const expected&amp;) = delete;
+</code></pre>
+<p>despite previously being fully defined with requires clauses.  I'm confused why this pattern is <em>only</em> seen here. My understanding is that defini...[truncated]",|c++|visual-c++|copy-constructor|c++-concepts|c++23|,1,176,1,6,0,2026-10-27 05:12:21,2026-10-27 16:52:01,80012773,2036035,5767
+80012757,C++: Calling another contructor in the initialization list,"<p>I'm learning C++ for topics around constructors of classes.</p>
+<p>I have made the following naive note, and then found it confusing.</p>
+<blockquote>
+<p>A constructor would be called when an instance of an object is created.</p>
+</blockquote>
+<p>Firstly, I'm not sure about the timing &quot;an object is created&quot;. Could I say that an constructor is called &quot;after&quot; an object is crea...[truncated]",|c++|constructor|,-3,67,0,6,0,2026-10-27 04:41:00,2026-10-27 05:47:39,,5290519,3035
+80012756,Fitting a family tree to the page width in the style of Burke's Peerage,"<p>I would like to make <a href=""https://en.wikipedia.org/wiki/Template:Lineage"" rel=""nofollow noreferrer"">Template:Lineage</a> on Wikipedia automatically resize the tree to fit the page width using a layout algorithm seen in Burke's Peerage and similar publications, where lines of descent flow past cousins until some or all of a node's children can be displayed on the same line, sometimes with ve...[truncated]",|javascript|css|family-tree|genealogy|,-9,102,0,2,0,2026-10-27 03:53:05,,,373514,2143
+80012755,"How to aggregate timestamps into left-open, right-closed buckets?","<p>I'm building one-minute bars and want each bar labeled with the end of the interval: rows in <code>(09:30:00, 09:31:00]</code> labeled <code>09:31:00</code>, rows in <code>(09:31:00, 09:32:00]</code> labeled <code>09:32:00</code>.</p>
+<p>Right now I use <code>dailyAlignedBar</code>:</p>
+<pre><code>ts = 2024.01.02T09:30:00.000 + (0 1 60 61 120) * 1000
+vol = 1..5
+t = table(ts as ts, vol as vol)
+
+...[truncated]",|aggregate|dolphindb|,-3,43,0,0,0,2026-10-27 03:47:08,,,31884612,25
+80012754,How do I take two points and find a new point that'd be R amount closer to the second point?,"<p>I've been trying to code a function that takes points A and B as inputs, and then figures out C by calculating where A would be if it was R units closer to B</p>
+<p>My first solution was to have C be equal to <code>A.x + (R), A.x + (R \* AB's slope)</code> but it ended up moving much further the bigger the slope got.</p>
+<p>I believe the solution might be using some sort of calculus but I haven...[truncated]",|java|libgdx|lerp|,-2,144,3,4,0,2026-10-27 03:37:00,2026-10-27 17:17:02,,33239532,13
+80012752,MSTest test classes and methods disappeared from testing side bar in VS Code,"<p>I recently added an MSTest project with some tests. I have two sealed classes for specific test domains, each containing a <code>Positive</code> sealed class marked <code>[TestClass]</code> and a <code>Negative</code>.</p>
+<pre class=""lang-cs prettyprint-override""><code>public sealed class ConfigurationReadWrite
+{
+    static NullLogger&lt;ConcreteProvider&gt; providerLogger = new();
+
+    [TestC...[truncated]",|vs-code|mstest|,-2,57,0,0,0,2026-10-27 02:48:14,2026-10-27 08:29:46,,1102726,1670
+80012751,iOS Safari shows blank areas and delays rendering DOM elements during fast scrolling,"<p>I'm experiencing a rendering issue in <strong>iOS Safari</strong> where fast scrolling causes DOM elements to temporarily disappear, exposing the page background. The missing elements only become visible again after a short delay or when scrolling slows down.</p>
+<p>This happens in my React application using Material UI (MUI).</p>
+<h3>What happens</h3>
+<ul>
+<li><p>The page initially renders cor...[truncated]",|css|safari|webkit|,0,38,0,0,0,2026-10-27 02:45:46,2026-10-27 21:37:40,,15357136,2325
+80012742,Changing array representation without copy,"<p>Coming from C, where you can easily do stuff such as:</p>
+<pre class=""lang-c prettyprint-override""><code>int main (void) {
+   int M[100][100] = { /*...*/ };
+   int * A = M;
+   // Work with A as if it's 100*100=10000 element 1D array...
+}
+</code></pre>
+<p>Allowing to change value M from a different view, which I now understand is probably UB... Well, on flat memory it should work out, so I'd lov...[truncated]",|advice|arrays|pointers|ada|,0,90,2,0,0,2026-10-27 01:42:04,,,21018771,79
+80012741,An uppercase JDBC column label fails on lowercase column name in the database,"<p>I am reading a sensor value through JDBC in a tree-model query. The returned label is <code>reading</code>, but using the same label in uppercase with a <code>ResultSet</code> getter fails.</p>
+<p>The minimal data on Apache IoTDB 2.0.10 is:</p>
+<pre class=""lang-sql prettyprint-override""><code>CREATE DATABASE root.calibration_cards;
+CREATE TIMESERIES root.calibration_cards.sensor_a.pressure
+  WI...[truncated]",|jdbc|resultset|apache-iotdb|treemodel|,-1,32,0,2,0,2026-10-27 01:38:18,2026-10-27 11:50:22,,22387711,7
+80012738,How to reliably verify AI-generated code fixes when LLMs give conflicting feedback,"<p>The technical lead suggested I rework some code changes after my second code submission via pull request, where he used GitHub Copilot models to check my code and raised five points. Out of the five points, I managed to fix four, with one remaining. The challenge here is that I use Copilot and Claude 3.5 Sonnet, and to review the code I am using Grok; but even when I resolve the code with the s...[truncated]",|advice|claude|github-codereviews|,-9,116,0,11,0,2026-10-27 00:45:14,2026-10-27 01:14:48,,1323080,84
+80012737,Where do I store my C sqlite in Linux system,"<p>So in this C program I will need to access and edit sqlite database but where do I store that data? in the program file? How linux file standard work?</p>
+",|advice|c|linux|sqlite|,-7,133,0,7,0,2026-10-27 00:36:27,2026-10-27 00:50:35,,15785206,1
+80012730,How do i move a wxwidgets Frame partially off screen via code,"<p>I am creating a custom top bar for my program where i can move the GUI via dragging the frame around, I have ran into a problem where calling <code>frame-&gt;move()</code> or <code>frame-&gt;SetPosition()</code> wont place the frame partially offscreen which makes using the program feel a bit annoying to use/reposition.</p>
+<p>I do not believe this is a OS issue as i can move the program offscr...[truncated]",|c++|user-interface|wxwidgets|,-2,54,1,1,0,2026-10-26 23:52:00,,,27334392,25
+80012728,Is it possible to use a disjoint set union method to find out how certain points are connected in a graph?,"<p>I have been learning about disjoint set union recently, and I have been wondering if it is possible to use a disjoint set union in other ways than just finding out if points are connected or not. Can a disjoint set union find how certain points are connected in a graph and can it find cycles of any sort in a tree or graph? Or are DFS and BFS better in this scenario?</p>
+",|c++|disjoint-sets|,-3,53,0,2,0,2026-10-26 23:31:12,,,31373590,35
+80012726,Which authentication supports read-only Cloudflare Containers API calls from Wrangler?,"<p>I need to list Cloudflare Containers application metadata and configured registry metadata using read-only API calls authenticated through <code>wrangler login</code>. I am trying to determine the supported authentication and permission requirements, rather than assume that an HTTP 401 identifies a particular cause.</p>
+<p>The relevant operations are:</p>
+<pre class=""lang-none prettyprint-overr...[truncated]",|cloudflare-workers|,-2,46,1,0,0,2026-10-26 23:01:36,,,22376213,17
+80012724,Does it make sense to perform the following micro-optimization in a *for* loop?,"<p>The following code illustrates a behavior of the <em>for</em> loop in <em>Java</em> that may be counterintuitive to some people:</p>
+<pre><code>void showNumbers( List&lt;Integer&gt; myList ) {   
+   for( int i = 0; i &lt; myList.size(); i ++ ) {      
+      myList.remove( myList.size() - 1 );      
+      System.out.println( i );   
+    }
+}
+</code></pre>
+<p>call by:</p>
+<pre><code>void run() {  ...[truncated]",|java|for-loop|optimization|,-3,117,2,9,0,2026-10-26 22:58:17,2026-10-27 11:24:43,,20882864,1596
+80012717,Vue 3 – Best approach to avoid rendering delays with dynamic form inputs (v-if vs v-show)?,"<p><strong>Title: Vue 3 – How to avoid rendering delays when switching dynamic forms from view mode to edit mode?</strong></p>
+<p>Hi everyone!</p>
+<p>I'm working on a Vue 3 application using TypeScript and Element Plus, and I'm experiencing some performance issues when switching between view mode and edit mode in dynamic forms.</p>
+<p><strong>The current implementation:</strong></p>
+<ul>
+<li><p>In...[truncated]",|javascript|typescript|vue.js|vuejs3|,-4,50,0,1,0,2026-10-26 22:21:53,,,33239440,19
+80012706,Atomic JSONB update in Python SQLAlchemy PostgreSQL,"<p>I need to update a <code>jsonb</code> column of a specific row in database. It holds a JSON object with <code>session_id</code>: <code>group_key</code>.</p>
+<p>On insert some key:value pairs will be added, then I need to add a new <code>session_id</code> to this JSON. It should be one atomic <code>update</code> operation and I don't need to <code>select</code> the current state of the row first...[truncated]",|python|postgresql|sqlalchemy|atomic|jsonb|,4,158,1,0,0,2026-10-26 21:18:35,2026-10-27 06:46:36,80012707,22959562,155
+80012697,Does send() ever return WSAEWOULDBLOCK?,"<p>I have a Winsock nonblocking socket (set by <code>WSAEventSelect</code>), and so far, even with a 2 GB buffer, <code>send</code> just returns success, having copied all the data into its own buffer.</p>
+<p>When I set the <code>SO_SNDBUF</code> buffer size close to the size of the system's memory, I get <code>WSAENOBUFS</code>. When I set <code>SO_SNDBUF</code> to zero, disabling buffering by <c...[truncated]",|c|sockets|tcp|winsock|nonblocking|,2,127,1,5,0,2026-10-26 20:23:42,2026-10-27 03:25:13,80012749,19619690,59
+80012691,YAML Pipelines - Server imposed 'system-pre-steps.yml' forcing agent version restriction,"<p>##[error]No agent found in pool [pool] which satisfies the following demand: Agent.Name. All demands: Agent.Name -equals '[name]', Agent.Version -gtVersion 5.279.0</p>
+<p>Log:</p>
+<pre><code>Job preparation parameters
+ContinueOnError: False
+TimeoutInMinutes: 60
+CancelTimeoutInMinutes: 5
+Expand:
+  MaxConcurrency: 0
+  ########## System Pipeline Decorator(s) ##########
+
+  Begin evaluating template...[truncated]",|azure|azure-devops|azure-pipelines|devops|azure-pipelines-yaml|,-3,43,0,0,0,2026-10-26 20:10:17,,,33239246,1
+80012687,Why doesn't my PyQt5 Progress Bar Dialog stay visible?,"<p>I'm trying to create a progress dialog box with 2 progress bars: the first for the number of files processed, and the second for the number of rows processed in the current file. I've simplified down to the following:</p>
+<pre class=""lang-py prettyprint-override""><code>import sys
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QLabel, QVBoxLayout, 
+                             QPushButt...[truncated]",|python|python-3.x|pyqt5|,3,129,1,1,0,2026-10-26 19:53:45,2026-10-26 20:00:04,80012695,2840125,631
+80012680,mathml rendering of abs value is buggy in chrome on MacOS,"<p>For a simple variable mathml in chrome works fine:</p>
+<p><div class=""snippet"" data-lang=""js"" data-hide=""false"" data-console=""false"" data-babel=""false"" data-babel-preset-react=""false"" data-babel-preset-ts=""false"">
+<div class=""snippet-code"">
+<pre class=""snippet-code-html lang-html prettyprint-override""><code>&lt;math&gt;
+  &lt;mrow&gt;
+    &lt;mo&gt;|&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo&gt;|&...[truncated]",|advice|google-chrome|mathml|,1,122,0,4,0,2026-10-26 18:56:55,2026-10-26 20:35:22,,7332803,242
+80012678,Android overlay that stays attached to a product page,"<p>I'm building an Android app and trying to implement an overlay that stays attached to a specific product page, but I'm struggling to get the behaviour right.</p>
+<p>For example, imagine browsing a product on Amazon. I want the overlay to behave like this:</p>
+<ul>
+<li><p><strong>On the product page:</strong> The overlay should appear and stay associated with that specific product page.</p>
+</li...[truncated]",|flutter|,-4,58,0,2,0,2026-10-26 18:50:11,2026-10-27 02:09:44,,33239132,1
+80012674,How can I prevent an older auto-save request from overwriting a newer edit?,"<p>I’m implementing auto-save in Angular with a Rust backend (Axum and SQLx) and PostgreSQL.</p>
+<p>The editor waits 500 ms after the user stops typing before sending an update. My concern is that two overlapping requests could update the database in the wrong order.</p>
+<h3>PostgreSQL table</h3>
+<pre><code>CREATE TABLE documents (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    conten...[truncated]",|angular|postgresql|rust|concurrency|autosave|,-2,104,1,1,0,2026-10-26 18:29:50,,,33238406,1
+80012673,In exactly what situations does “Loads May Be Reordered with Earlier Stores to Different Locations” actually manifest?,"<p>I am reading Intel IA32 SDM Volume 3, Section 11.2.3.4 “Loads May Be Reordered with Earlier Stores to Different Locations” (historically 8.2.3.4), and I am trying to pin down the exact conditions under which this reordering is observable.</p>
+<p>Under the processor-order model, what exactly is the mechanism behind this reordering? Is it related to out-of-order execution? If not, then under what...[truncated]",|advice|assembly|x86|cpu-architecture|memory-barriers|,12,353,1,1,0,2026-10-26 18:29:03,2026-10-27 16:29:06,,33238641,119
+80012669,the incorporated file the resolve links linrary rong,"<p>the code looks a flowing:</p>
+<p>the incorporated file the resolve and grabs the height field and the Person record size</p>
+<p><code>tallest.s</code></p>
+<pre><code>.globl _start
+.section .text
+_start:
+
+leaq people, %rbx
+
+movq numpeople, %rcx
+
+movq $0, %rdi
+
+cmpq $0, %rcx
+je finish
+
+mainloop:
+    movq HEIGT_OFSET(%rbx), %rax
+
+    cmpq %rdi, %rax
+    jbe endloop
+
+    movq %rax, %rdi
+
+endloop:
+ ...[truncated]",|assembly|x86-64|,-11,105,0,4,0,2026-10-26 17:42:04,2026-10-26 17:45:39,,5204804,1
+80012665,Installation of more than 2000 packages from cran,"<p>I have this code that installs packages only from cran out of the list that are in txt.</p>
+<pre class=""lang-r prettyprint-override""><code># Read package names from the txt file
+ pkgs &lt;- read.delim(&quot;packages.txt&quot;)$Package
+
+# Define the CRAN repository
+cran_repo &lt;- &quot;https://cran.rstudio.com/&quot;
+
+# Get packages currently available on CRAN
+cran_pkgs &lt;- rownames(
+  availa...[truncated]",|r|install.packages|,-9,135,0,8,0,2026-10-26 17:19:59,,,32849764,9
+80012649,How do I send a message to a Teams channel from a C# application with a web hook url,"<p>I am trying to send a message to a Teams channel from a C# application using a valid web hook.</p>
+<p>This is my code:</p>
+<pre><code>var messageJson = @&quot;{
+    &quot;&quot;type&quot;&quot;: &quot;&quot;message&quot;&quot;,
+    &quot;&quot;attachments&quot;&quot;: [
+    {
+        &quot;&quot;contentType&quot;&quot;: &quot;&quot;application/vnd.microsoft.card.adaptive&quot;&quot;,
+        &q...[truncated]",|c#|microsoft-teams|,0,139,0,5,0,2026-10-26 15:45:14,2026-10-27 16:22:09,,674718,530
+80012647,How to implement Protected Routes in React Router version 8?,"<p>I am trying to implement protected routes in my React application using React Router v8. I have two routes, <code>shopdetail/:id/:name</code> and <code>cart</code>, which I want to restrict to logged-in users only. If the user is not logged in, they should be redirected to the <code>/auth</code> (login) page.</p>
+<p>In previous versions (like v6/v7), I used to create a wrapper component called ...[truncated]",|reactjs|react-router|react-typescript|,-3,45,0,4,0,2026-10-26 15:44:30,,,19151271,65
+80012640,GNU Make: How can I slow down forking new jobs,"<p>When I use GNU Make with the <code>-j&lt;n&gt;</code> parameter, it forks the first several processes all at once. But I've determined that the initialization of these jobs sometimes interfere with one another so it causes some of the jobs to fail. How can I tell make to start the initial jobs with some delay between? It doesn't need to be much--just a one-second delay between starting jobs wou...[truncated]",|gnu-make|,-5,89,0,7,0,2026-10-26 15:15:25,,,8353152,561
+80012637,onload() not called when revisiting a PHP page (after upgrade to PHP 8.5),"<p>My PHP V7.1.8 website has been working fine since 2017 but it has been broken by the recent upgrade to PHP 8.5! The website consists of PHP pages with JavaScript &amp; HTML. Each page relies on a PHP function to set HTML elements from PHP session variables. This is called by an <code>onload()</code> function in the HTML :</p>
+<pre><code>&lt;body class=&quot;body&quot; onload=&quot;DoLoadEvents(...[truncated]",|javascript|php|onload|,-4,146,0,11,0,2026-10-26 14:53:15,2026-10-26 15:02:44,,33238624,11
+80012635,Point NiFi processor PutAzureBlobStorage_v12 to custom truststore,"<p>Some context:</p>
+<ul>
+<li><p>My NiFi version is 2.9.0.</p>
+</li>
+<li><p>I need to access my Azure blob storage via proxy over the internet.</p>
+</li>
+<li><p>I cannot use private link and configure FW access, because then I will not be able to configure PowerBI service to fetch data from this storage, unless I buy an expensive fabrics subscription to unblock network settings in workspace.</p>
+<...[truncated]",|azure|ssl|apache-nifi|,-3,35,0,0,0,2026-10-26 14:44:48,,,15084838,62
+80012632,How to securely impersonate multiple Salesforce Contacts in Laravel and manage sessions?,"<p>I have a Laravel application integrated with Salesforce. My Laravel <code>users</code> table contains a <code>contact_id</code> linked to Salesforce Contacts.</p>
+<p><strong>Main Requirement: Multiple Contact Impersonation &amp; Session Management</strong></p>
+<p>When a Salesforce admin clicks <strong>&quot;Login as Customer&quot;</strong> on a Contact record, Laravel should automatically log i...[truncated]",|laravel|oauth-2.0|salesforce|single-sign-on|impersonation|,-1,49,0,0,0,2026-10-26 14:32:37,,,10739226,91
+80012628,How this solution(climbing stairs or fibonacci series) is top down approach?,"<pre><code>class Solution {
+public:
+  int climbStairs(int n) {
+    vector&lt;int&gt; ds(n + 1, -1);
+    return memoization(0, n, ds);
+  }
+
+  int memoization(int i, int n, vector&lt;int&gt; &amp;ds) {
+    if (i &gt; n)
+      return 0;
+    if (i == n)
+      return 1;
+    if (ds[i] != -1) {
+      return ds[i];
+    }
+    return ds[i] = memoization(i + 1, n, ds) + memoization(i + 2, n, ds);
+  }
+};
+</co...[truncated]",|c++|algorithm|dynamic-programming|,-2,153,2,2,0,2026-10-26 14:20:59,2026-10-26 14:59:01,,18511985,60
+80012621,Struggling to understand Python while loop code block,"<p>I don't understand a python code can anyone break it down</p>
+<p>specially the</p>
+<pre><code>while i &lt; size - 1
+</code></pre>
+<p>I understand that while loop will check if while smaller than size or not but why <code>size - 1</code>.</p>
+<pre><code>pyname = 'Jesaa29Roy'
+
+size = len(pyname)
+i = -1
+# iterate loop till the last character
+while i &lt; size - 1:
+    i = i + 1
+    # skip while lo...[truncated]",|python|,-8,253,1,4,0,2026-10-26 14:12:38,2026-10-26 14:16:59,,30275995,5
+80012620,"ojdbc17 23.26.3 fails with ORA-12564 (before authentication) when the OS username is ""USER"" — empty TNS CID sent","<h3>Environment</h3>
+<ul>
+<li>Oracle JDBC thin driver: <strong>ojdbc17 23.26.3.0.0</strong> (from Oracle Maven repo)</li>
+<li>Java: OpenJDK 25.0.3 (Temurin, macOS aarch64) — also reproduced with a bare JVM,
+no app framework</li>
+<li>DB: Oracle (reachable via
+<code>jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=&lt;redacted&gt;)(PORT=&lt;redacted&gt;))(CONNECT_DATA=(SERVER=DEDICATED)(S...[truncated]",|java|oracle-database|jdbc|ojdbc|,0,71,1,2,0,2026-10-26 14:03:56,,,33238493,25
+80012616,Ruby native extensions fail to build after macOS upgrade,"<p>After upgrading to macOS Golden Gate 27.0.1, my Jekyll-based website stopped working because Bundler cannot find several required gems.</p>
+<h3>Ruby and Bundler versions</h3>
+<pre><code>ruby 4.0.9 (2026-10-23 revision 3e93b23afc) +PRISM [arm64-darwin27]
+Bundler version 4.0.11
+</code></pre>
+<h3>Missing gems</h3>
+<p>Running <code>bundle list</code> reports:</p>
+<pre><code>Could not find eventmach...[truncated]",|ruby|macos|jekyll|bundle|,0,63,1,2,0,2026-10-26 13:45:26,,,2270324,447
+80012615,iOS SwiftUI hide scroll indicator from voice over,"<p>Is there any way to hide the scroll indicator from a ScrollView only from accessibility tools (Voice Over, etc.) ?</p>
+<p>Issue:</p>
+<p>Voice Over reads scroll indicator before floating button, which may lead blind users using VO to ignore the button and abandon the flow.</p>
+<pre class=""lang-swift prettyprint-override""><code>ZStack {
+    ScrollView(…)
+    Button(…)
+}
+</code></pre>
+<p>Voice ove...[truncated]",|ios|scrollview|voiceover|,0,55,0,0,0,2026-10-26 13:35:50,,,19092920,21
+80012614,What is the return value of IPC::Semaphore's op()?,"<p>I write a mutli-process daemon that uses semaphores for exclusive access to shared memory.</p>
+<p><a href=""https://perldoc.perl.org/IPC::Semaphore"" rel=""nofollow noreferrer"">IPC::Semaphore</a></p>
+<p>As it runs in to a deadlock sometimes, I tried to debug it. First I wanted to use <code>IPC_NOWAIT</code>, but I'm unsure whether to check <code>$!</code> or the return value of <code>$sem-&gt;op()...[truncated]",|perl|return-value|ipc|semaphore|,-2,93,1,2,0,2026-10-26 13:32:31,2026-10-27 07:41:08,,32596570,217
+80012600,Trivy Scan Issue,"<p>Trivy Kubernetes Full Scan Extremely Slow in GitLab CI, but Completes Quickly on EC2</p>
+<p>Environment</p>
+<ul>
+<li><p>Scanner: Trivy, using trivy k8s</p>
+</li>
+<li><p>Target: An Amazon EKS Kubernetes cluster</p>
+</li>
+<li><p>CI environment: GitLab CI job running a scanner container through a Docker-compatible runtime (Podman-based build environment)</p>
+</li>
+<li><p>Comparison environment: EC...[truncated]",|docker|kubernetes|amazon-ec2|gitlab|trivy|,-9,44,0,0,0,2026-10-26 12:48:04,,,28781929,1
+80012592,Problem with downcasting to an interface with a generic type,"<p>I need to create a WPF application, which would display, allow to edit entries of some database, etc. I decided to create a special <code>UserControl</code> for displaying each entry of each table from my DB using a <code>ListView`</code> For that, I created an interface, let say, <code>IDisplayVM</code> which would take a generic type when a class (A <code>ViewModel</code> for said <code>UserC...[truncated]",|c#|wpf|generics|casting|downcast|,0,181,1,9,0,2026-10-26 12:11:26,2026-10-27 14:58:52,,22847822,69
+80012571,How to align images on the same x,"<p>I have tried aligning images using <code>&lt;span&gt;</code>, and it was okay until I added text beneath the images. Now it's one under the other again. I want to achieve something similar to a photo below. Margin right and left are so small because there are 5 photos, but the website says my code's too long and the details are too scarce.</p>
+<pre class=""lang-html prettyprint-override""><code> ...[truncated]",|html|css|,0,209,3,3,0,2026-10-26 10:02:01,2026-10-26 17:28:53,,33238027,19
+80012553,Multithreaded web server is not threading requests,"<p>I refer to this <a href=""https://stackoverflow.com/questions/14088294/multithreaded-web-server-in-python"">multithreaded-web-server-in-python</a> post and there, to this <a href=""https://stackoverflow.com/a/51559006/33236745"">answer</a>.</p>
+<p>I removed for simplicity reasons the HTTPS part. This is the running MRE:</p>
+<pre><code>from http.server import HTTPServer, BaseHTTPRequestHandler
+from ...[truncated]",|python|multithreading|http|webserver|,-2,250,2,4,0,2026-10-26 08:34:12,2026-10-26 08:35:49,,33236745,29
+80012552,Assembler getting wrong echo output,"<p>The incorporated file the resolve and grabs the height field</p>
+<p>The code looks as following:</p>
+<p><code>tallest.s</code></p>
+<pre><code>.globl _start
+.section .text
+_start:
+
+leaq people, %rbx
+
+movq numpeople, %rcx
+
+movq $0, %rdi
+
+cmpq $0, %rcx
+je finish
+
+mainloop:
+
+movq HEIGT_OOFSET(%rbx), %rax
+jbe endloop
+
+movq %rax , %rdi
+
+endloop:
+    addq $PERSON_RECORD_SIZE, %rbx
+
+    loopq mainloop
+...[truncated]",|assembly|x86-64|,-5,145,1,1,0,2026-10-26 08:23:57,2026-10-26 10:06:34,80012557,5204804,1
+80012549,Module not found with a Dockerfile,"<p>I try to compile my React project with my Dockerfile and there's the same error about the missing http module come back instead by searching solutions</p>
+<pre class=""lang-none prettyprint-override""><code>PS D:\Projet developpements\Converleon&gt; docker build -t converleon .
+[+] Building 14.2s (17/17) FINISHED                     docker:default
+ =&gt; [internal] load build definition from dock...[truncated]",|node.js|docker|npm|webpack|,-5,85,1,0,0,2026-10-26 08:19:39,2026-10-26 15:58:46,,31323935,1
+80012532,Code completion is not working in rust-clippy repository using Zed editor,"<p>I was using Linux, the <a href=""https://zed.dev/"" rel=""nofollow noreferrer"">Zed</a> editor and the <code>rustc 1.101.0-nightly (7df81381d 2026-10-14)</code> version. When I cloned the <a href=""https://github.com/rust-lang/rust-clippy"" rel=""nofollow noreferrer"">Clippy repository</a> and ran <code>cargo check</code> then it succeeds, but the code completion is not working.</p>
+<p>According to the...[truncated]",|rust|code-completion|rust-clippy|zed|,-1,93,1,2,0,2026-10-26 06:45:48,,,10721627,2753
+80012528,Unable to open 'antigravity' in Codespace,"<p>Unable to open 'antigravity' in Codespace</p>
+<p><a href=""https://i.sstatic.net/ZNPgXdmS.png"" rel=""nofollow noreferrer"">enter image description here</a></p>
+<p>It displays the following:</p>
+<blockquote>
+<p>Couldn't load this view  An unexpected error occurred while loading this view. Please reload.Try again Report issue</p>
+</blockquote>
+<p>I want to use Antigravity in a chat format, similar t...[truncated]",|github-codespaces|codespaces|antigravity|,-8,69,0,1,0,2026-10-26 06:19:00,2026-10-27 13:28:00,,33237625,1
+80012509,Why does my JS make the browser scroll to the bottom of the page when switching to a section that's taller than the window height?,"<p>Here's my JS:</p>
+<pre class=""lang-js prettyprint-override""><code>function ClearPage() // unloads every page
+{
+    document.getElementById('home').style.display = 'none';
+    document.getElementById('menu').style.display = 'none';
+    document.getElementById('teasers').style.display = 'none';
+    document.getElementById('nopage').style.display = 'none';
+}
+
+function SetPage(page) // loads specif...[truncated]",|javascript|html|,5,317,1,0,0,2026-10-26 00:24:07,,80012513,12904253,51
+80012507,bitbake do_compile Error building a program using spdlog in yocto,"<p>I would like to build a program using spdlog in yocto, but I'm getting the following error:</p>
+<blockquote>
+<p>ERROR: hspdlog-1.0-r0 do_compile: ExecutionError('/yocto/build/tmp/work/armv8a-poky-linux/hspdlog/1.0/temp/run.do_compile.11036', 1, None, None)</p>
+<p>ERROR: Logfile of failure stored in: /yocto/build/tmp/work/armv8a-poky-linux/hspdlog/1.0/temp/log.do_compile.11036</p>
+<p>Log data fo...[truncated]",|linux|yocto|spdlog|,-2,78,0,4,0,2026-10-26 00:00:37,,,33204357,13
+80012502,Is it possible to update all `text-align: left` rules to justify` while leaving `center` and `right` unchanged?,"<p>I use a firefox extension to make changes to the CSS styling of pages. I currently have a global rule setting most normal text to <code>text-align: justify</code>. But this has the occasional issue of forcing center- or right-aligned text to be left-aligned.</p>
+<p>Is there any way with CSS to set <code>text-align: justify</code> in such a way as to only override rules that use left-alignment, ...[truncated]",|css|,1,103,1,0,0,2026-10-25 23:18:08,,80012511,32963450,31
+80012496,Why does casting to Object[] prevent a ClassCastException?,"<p>I have a <code>toArray()</code> method on a generic <code>Box&lt;E&gt;</code> class returning <code>E[]</code>, and since you can’t write <code>new E[10]</code>, I built an <code>Object[]</code> and cast it on the way out. Stripped down, it’s this:</p>
+<pre><code>public class Box&lt;E&gt; {
+    private Object[] data = new Object[] { &quot;a&quot;, &quot;b&quot; };
+
+    @SuppressWarnings(&quot;u...[truncated]",|java|generics|casting|type-erasure|,9,670,4,7,0,2026-10-25 22:25:24,2026-10-25 22:57:48,,33237117,99
+80012490,Does Unique make sense on unique values?,"<p>I want to know know about is it good to provide a <strong>unique</strong> constraint to a field which you know that where will be always a unique value for example assume a DB field as a <strong>verification-token,</strong> you are generating a <strong>crypto-graphically</strong> unique values and storing it, so does it make any difference adding unique constraint to this field?</p>
+<p>I consul...[truncated]",|advice|unique-constraint|,-6,127,1,1,0,2026-10-25 21:02:03,2026-10-25 21:07:44,,31883130,1
+80012478,Why does fflush(stdin) not clear the input buffer in C on macOS (GCC)?,"<p>I am writing a C program that takes an integer input followed immediately by a character input. When I enter a number for the first <code>scanf</code> and press Enter, the second <code>scanf</code> doesn't wait for my input. Instead, it reads the Enter key (newline character) as the character, and the program terminates.</p>
+<p>I have tried the following three things to solve this problem:</p>
+...[truncated]",|c|macos|scanf|fflush|input-buffer|,-3,179,1,10,0,2026-10-25 19:47:49,,80012482,32540459,63
+80012467,"In Java, Is an Object[] Homogeneous or Heterogeneous?","<p>According to Java standards, if an array or <strong>ArrayList</strong> stores all its elements as <strong>Object</strong> references, shouldn't those elements be considered homogeneous because their declared reference type is the same? Even though the JVM identifies their individual runtime types as <strong>Integer</strong>, <strong>String</strong>, <strong>Double</strong>, etc., shouldn't we d...[truncated]",|java|types|collections|jvm|heterogeneous|,-9,269,1,12,0,2026-10-25 18:19:22,2026-10-26 08:23:17,,33236787,15
+80012463,What are sanitizers and how could they help me find problems in my code?,"<p>I heard that modern C and C++ compilers have &quot;sanitizers&quot; which are supposedly the best thing since sliced bread. But why is it so?</p>
+<p>For example, here's a program I've been working on:</p>
+<pre class=""lang-c prettyprint-override""><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+typedef struct Node_s { 
+    int num; 
+    struct Node_s *next; 
+} Node;
+
+int main() {
+    No...[truncated]",|best-practices|c++|c|sanitizer|,19,859,1,0,0,2026-10-25 18:16:33,2026-10-27 13:19:33,80012464,775806,125697
+80012461,Sending/Receiving SMS using Android apps,"<p>I'd like to create an Android app (to install on my private smart phones/tables etc) to be able to send and receive SMS. Very simple. A bottom with a text filed to send an SMS to a number and another text filed to show an SMS once one is received.</p>
+<ol>
+<li>Is it possible? I.e., does Android OS allow that?</li>
+<li>How easy/hard is it?</li>
+<li>If possible, agree to use Kotlin for it?</li>
+<...[truncated]",|advice|android|sms|,-9,138,1,1,0,2026-10-25 18:04:40,2026-10-26 21:09:28,,4989541,1222
+80012457,I fail to understand in simple terms what `eglSwapBuffers` does in this piece of code,"<p>I implemented a simple demo using OpenGL ES to render graphics upon a drim device:</p>
+<pre class=""lang-c prettyprint-override""><code>#include &lt;stdlib.h&gt;
+#include &lt;fcntl.h&gt;       
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+#define GLFW_INCLUDE_ES2
+
+#include &lt;drm.h&gt;  
+#include &lt;drm_mode.h&gt;  
+#include &lt;gbm.h&gt;
+#include &lt;xf86drm.h&gt;
+
+#include &quot;square...[truncated]",|c|opengl-es|egl|linux-drm|,-4,132,0,2,0,2026-10-25 17:17:57,2026-10-25 17:35:15,,4706711,10756
+80012452,Segmentation fault when inserting a node at the end of a singly linked list in C,"<p>I am implementing a Singly Linked List data structure in C. I wrote an <code>appendNode</code> function to create a new node and add it to the end of the list, but a <code>Segmentation fault</code> occurs during execution and the program crashes.</p>
+<p>I have tried the following three things to solve this problem</p>
+<ol>
+<li><p>I traced the issue by inserting <code>printf(&quot;test\n&quot;);...[truncated]",|c|data-structures|linked-list|segmentation-fault|,-1,166,1,6,0,2026-10-25 16:46:58,,80012453,32540459,63
+80012435,ValueError: failed to validate MultiPolygons when trying to create interactive map using Carto basemap and geopandas,"<p>I am trying to produce an interactive map on bird migration. I am joining a data set of bird observations from GBIF with geographic shape files (ecoregions by RESOLVE) and a base map from CARTO. I am fairly new to Python and coding in general.</p>
+<p>I have imported these packages: cartopy.crs, panel, hvplot.pandas, holoviews,calendar, os, pathlib, pandas, geopandas, earthpy</p>
+<p>The code in ...[truncated]",|python|geospatial|geopandas|cartopy|holoviews|,4,239,1,0,0,2026-10-25 15:06:19,2026-10-25 15:28:07,,33236433,39
+80012430,How to fix WampServer addons defaulting to C:\wamp64 after migrating to another computer?,"<p>I migrated <strong>WampServer 3 (64-bit)</strong> from an old Windows computer to a new one by copying the entire installation directory.</p>
+<p>My WampServer installation is located at:</p>
+<pre><code>C:\progs\wamp64
+</code></pre>
+<p>WampServer itself works correctly, including Apache, MySQL and PHP.</p>
+<p><strong>The problem:</strong></p>
+<p>Every time I install a WampServer addon (for examp...[truncated]",|windows|wamp|inno-setup|,-2,86,1,2,0,2026-10-25 14:38:41,2026-10-26 22:48:46,,322014,195
+80012429,Why are spaces misaligned in the bottom half of my C diamond pattern?,"<p>I'm currently working on a C programming assignment that involves using loops to output diamond-shaped constellations.</p>
+<p>When given an integer 'n', the longest row will have '2n-1' stars (e.g., input 8 will output a total of 15 rows).</p>
+<p>The top edge (up to the number of input lines) is output correctly according to the rules, but as we move to the bottom edge, a problem occurs where t...[truncated]",|c|for-loop|printing|,-7,141,1,6,0,2026-10-25 14:33:54,2026-10-25 19:59:07,80012473,32540459,63
+80012424,How to ignore whitespace in the review page when calling `git commit --verbose`?,"<p>I like to use <code>git commit --verbose</code> to review my changes before committing. However, there are too many (wanted) whitespace changes showing up, that they are hiding the meat of my commits.</p>
+<p>Is there a setting similar to option for <code>git diff</code> that will change the output of <code>git commit --verbose</code> to not include whitespace?</p>
+<p>And just to demonstrate wha...[truncated]",|git|git-diff|,-5,78,0,7,0,2026-10-25 14:07:07,2026-10-25 15:43:25,,10118965,845
+80012423,JQuery validation not working in new ASP.NET Core MVC web application,"<p>We are developing a web application in ASP.NET Core MVC, which has some special requirements. It has to be multilingual (target most of W. Europe), with both client-side and server-side validation. Although the different language versions will first be produced by a translation API there is also a requirement that country managers can improve the translations for their languages and even alter ...[truncated]",|c#|jquery|asp.net-core-mvc|,3,94,1,0,0,2026-10-25 14:02:42,2026-10-25 17:41:00,80012426,33220848,41
+80012420,How to rank a user's top 8 friends by interaction score in SQL (Snapchat-style planets)?,"<p>I'm building a social app and want to add a &quot;top friends&quot; feature similar to Snapchat+'s Friend Solar System where a user's eight closest friends are ranked and shown as planets (Mercury = closest friend, then Venus, Earth, and so on).</p>
+<p>Snapchat has not published the exact ranking formula, so I'm designing my own version based on interaction counts (meFor reference on how the fe...[truncated]",|environment|feature-extraction|,-7,85,1,1,0,2026-10-25 13:34:30,,,33236276,1
+80012415,Div is expanding to fit content when I don't want it to,"<p>I have a <code>&lt;div&gt;</code> that is 95% the width of the screen, but for some reason when I add more content inside (more nav-links) it it expands horizontally to fit the content. I can't seem to find the problem.</p>
+<p>I can't figure out if it's to do with the parent container width, the <code>white-space: nowrap</code> (I noticed this problem when I added that), or something else.</p>
+...[truncated]",|html|css|,3,122,1,0,0,2026-10-25 12:47:20,,,32942513,47
+80012412,Get rid of unwanted splash of color which is not splashColor in Flutter FilterChip widget,"<p>I have attached a full code demonstrating the problem where the Chip when pressed for selection shows, momentarily, a <code>Cyan</code> colored background which as for my experiments is not the splashColor. I have tried wrapping the FilterChip with Theme and changing various colors to Colors.transparent but nothing seems to work. Please help me fix this.</p>
+<h3>The Code:</h3>
+<pre class=""lang-...[truncated]",|flutter|themes|,0,94,2,1,0,2026-10-25 12:21:01,,80012421,23548774,1555
+80012398,How to fix sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) unable to open database file?,"<p>I was trying to run this jupyter notebook (<a href=""https://github.com/langchain-ai/lca-lc-foundations/blob/main/notebooks/module-2/2.4_wedding_planners.ipynb"" rel=""nofollow noreferrer"">https://github.com/langchain-ai/lca-lc-foundations/blob/main/notebooks/module-2/2.4_wedding_planners.ipynb</a>) code in my IDE but encountered these problems:</p>
+<p>my code:</p>
+<pre class=""lang-py prettyprint-...[truncated]",|python|sqlite|sqlalchemy|model-context-protocol|,2,276,2,3,0,2026-10-25 10:15:26,2026-10-26 10:08:06,,30686372,11
+80012396,How to fix unused variable warning in recursive pattern matching?,"<p>I have this code:</p>
+<pre><code>/// Return the element after the given one.
+pub fn get_next_after(input: List(a), item: a) -&gt; Result(a, Nil) {
+  case input {
+    [item, next, ..] -&gt; Ok(next)
+    [_, ..rest] -&gt; get_next_after(rest, item)
+    [] -&gt; Error(Nil)
+  }
+}
+</code></pre>
+<p>It raises the following warning in Gleam 1.19.0:</p>
+<pre><code>[item, next, ..] -&gt; Ok(next)
+       ...[truncated]",|recursion|gleam|,0,62,1,0,0,2026-10-25 10:06:33,2026-10-26 17:29:52,,378386,2652
+80012389,DBD::DB2 column name decoding,"<p><a href=""https://metacpan.org/pod/DBD::DB2"" rel=""nofollow noreferrer"">DBD::DB2</a>: Is SQL_APPLICATION_CODEPAGE the correct encoding to use when decoding column names returned by<code>$sth-&gt;{NAME}</code> ?</p>
+",|perl|db2|dbi|,-6,97,0,6,0,2026-10-25 09:03:48,2026-10-25 11:49:01,,198183,25669
+80012388,GridDB Python client raises TypeError when reading the result of a MAX() aggregation query,"<p>I'm running a TQL aggregation query on a TimeSeries container with the GridDB Python client. The query runs without problems, but reading the value from the row set fails. My environment is Ubuntu 22.04, GridDB CE 5.6.0, griddb-python 0.8.5 and Python 3.10.12.</p>
+<pre class=""lang-py prettyprint-override""><code>import griddb_python as griddb
+
+factory = griddb.StoreFactory.get_instance()
+store =...[truncated]",|griddb|,1,52,1,0,0,2026-10-25 08:16:31,2026-10-26 13:55:48,,1283345,6907
+80012386,Aligning comment columns with clang-format,"<p>Is there a clang-format option to align parameter names and descriptions into columns in Doxygen function comments, including @param[in/out] and @retval?</p>
+<p>I’m using clang-format 14.0.6. If this is supported in a newer version, I’d be interested in upgrading of course.</p>
+<p>Current docs:</p>
+<pre class=""lang-c prettyprint-override""><code>/**
+   * @brief Process a sequence of values.
+   *...[truncated]",|format|clang|,0,36,0,0,0,2026-10-25 08:12:17,,,15001463,788
+80012370,Can a modern compiler be instructed to allow reading from an uninitialized array,"<p>Recently I learned of &quot;Sparse Sets&quot; from this article: <a href=""https://research.swtch.com/sparse"" rel=""nofollow noreferrer"">https://research.swtch.com/sparse</a></p>
+<p>Briefly summarized, it is a data structure that intentionally reads from an uninitialized array for optimization purposes. If its internal &quot;sparse&quot; array is of size M then initializing it is O(M) and not ini...[truncated]",|c++|undefined-behavior|,4,312,1,1,0,2026-10-25 05:05:43,2026-10-25 06:29:40,80012609,32617251,207
+80012365,How can I ensure a 20 microsecond cycle during real time testing?,"<p>I am tasked with finding a software solution to a jitter problem occurring on our real time testing system. Our <a href=""https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation"" rel=""nofollow noreferrer"">HiL</a> has a frequency of 50kHz and I want to ensure one cycle is completed every 20 microseconds.</p>
+<p>The system sometimes forgets where it's at, proceeding with the wrong timestamp ...[truncated]",|advice|python|testing|jitter|,1,371,1,1,0,2026-10-25 03:40:28,2026-10-26 00:22:22,,33226977,21

@@ -176683,7 +176683,7 @@ lines_dict[key].set_linestyle(&quot;--&quot;)
 </code></pre>
 ",|seaborn|linestyle|histplot|,0,74,1,0,0,2026-07-14 08:40:28,,,21049944,398
 79980575,Optimised 64 bit constant division on Aarch64,"<p>A variant on a theme. Clang trunk compiles the following:</p>
-<pre><code>unsigned long div(unsigned long d)     {        return d/7;     }  
+<pre><code>unsigned long div(unsigned long d)    {       return d/7;    }  
 </code></pre>
 <p>To this:</p>
 <pre><code>div(unsigned long):  
@@ -176697,7 +176697,7 @@ lines_dict[key].set_linestyle(&quot;--&quot;)
     lsr     x0, x8, #2  
     ret  
 </code></pre>
-<p>The below saves two cycles and an instruction, using Robison’s division method due to 1) better pipelining and 2) exploiting symmetry of Robison’s constants. </p>
+<p>The below saves two cycles and an instruction, using Robison’s division method due to 1) better pipelining and 2) exploiting symmetry of Robison’s constants.</p>
 <p>Aarch64 doesn’t have a 64x64-&gt;128 bit multiply and accumulate instruction so this isn’t as much of an improvement as on 32 bit, but still a reasonable saving.</p>
 <pre><code>mov     w8, #0x9249  
 movk    w8, #0x4924, lsl #16  
@@ -323369,7 +323369,7 @@ KeyedResultList&lt;Abc&gt; resultList2 = session
 <p>P.S.: I use hibernate 7.2</p>
 ",|java|spring-boot|hibernate|hibernate-criteria|advice|,0,52,0,0,0,2026-05-15 13:57:01,2026-05-15 13:58:39,,12903059,1
 79941784,Why does SwiftUI change to @Published property fail to trigger UI update?,"<p>In an app I'm working on, I added a TextEditor field that displays the contents of a @Published Text property from my app's document's Model object.</p>
-<p>   Here are the relevant parts of the model object:</p>
+<p>Here are the relevant parts of the model object:</p>
 <pre><code>final class DrawingInfo: ObservableObject, Codable {
     // Items saved with Codable
     @Published var title: String
@@ -323413,10 +323413,10 @@ KeyedResultList&lt;Abc&gt; resultList2 = session
     }
 }
 </code></pre>
-<p>When you click the &quot;Test&quot; button, it appends the string &quot; Extra Words.&quot; To the model's<code>text</code> property.   </p>
-<p>However, my TextEditor does not update to reflect the changes until you make another change to one of the model's @Published properties (like clicking the Toggle or adjusting the slider.)  </p>
-<p>I gather that's because the button's closure changes the <code>text</code> property directly rather than making changes through the model's bindings.  </p>
-<p>How can I change the button's closure so my TextEditor picks up changes to the <code>text</code> property? Do I need to set up a Combine publisher to trigger a change? </p>
+<p>When you click the &quot;Test&quot; button, it appends the string &quot; Extra Words.&quot; To the model's<code>text</code> property. </p>
+<p>However, my TextEditor does not update to reflect the changes until you make another change to one of the model's @Published properties (like clicking the Toggle or adjusting the slider.)</p>
+<p>I gather that's because the button's closure changes the <code>text</code> property directly rather than making changes through the model's bindings.</p>
+<p>How can I change the button's closure so my TextEditor picks up changes to the <code>text</code> property? Do I need to set up a Combine publisher to trigger a change?</p>
 <p>You can view the project on Github at this link: <a href=""https://github.com/DuncanMC/DrawingApp.git"" rel=""nofollow noreferrer"">https://github.com/DuncanMC/DrawingApp.git</a></p>
 ",|swiftui|combine|observableobject|,-1,129,2,7,0,2026-05-15 13:55:18,,,205185,131953
 79941775,How to put certain variable contents at bottom of certain columns in a two-column document,"<p>My objective is to put some text in a rectangle in top of certain columns.</p>
@@ -329568,7 +329568,7 @@ ERROR: KeyError: key v&quot;6.10.2+1&quot; not found
 79940571,"How do you use VertexBuffers to pass dynamic, variable-sized data to Metal?","<h2>The background:</h2>
 <p>I'm working to learn Metal, and how to use MTKView in SwiftUI.</p>
 <p>I'm laying the groundwork for an object-oriented drawing program that will let the user draw feathered strokes using Catmull-Rom splines.</p>
-<p>I started out passing my vertices to Metal using <code>setVertexBytes</code> to pass my vertexes to my vertex shader.  I've written helper functions to draw thick lines, arcs, open circles (donuts), squares, and a few other types I am taking out of the example code to simplify it.</p>
+<p>I started out passing my vertices to Metal using <code>setVertexBytes</code> to pass my vertexes to my vertex shader.I've written helper functions to draw thick lines, arcs, open circles (donuts), squares, and a few other types I am taking out of the example code to simplify it.</p>
 <p>When I tried to draw a large circle, you could see that it was a polygon rather than a circle. I tried upping the number of segments to 360, and then discovered that you can only pass about 4k of data using <code>setVertexBytes</code>.</p>
 <p>I updated my code to pass the list of vertexes using a vertex buffer rather than passing them with <code>setVertexBytes</code> so I could pass in a larger array of vertexes. However, it looks to me like a vertex buffer is a persistent resource attached to a metal device with a fixed size. I'm not sure how to pass variable length data to my shaders using vertex buffers. (Since I'm building a drawing program, the list of vertexes will grow as the user adds to the drawing.)</p>
 <h2>The problem:</h2>
@@ -329590,15 +329590,15 @@ ERROR: KeyError: key v&quot;6.10.2+1&quot; not found
             thickness: 20,
         )
 </code></pre>
-<p>Yields this image: </p>
+<p>Yields this image:</p>
 <p><img src=""https://i.sstatic.net/HlW9FqzO.jpg"" alt=""My sample drawing using setVertexBytes"" />
 ￼</p>
 <p>(I commented out some of the code to simplify the fail case.
- However, when I switch to passing my vertex data using <strong>setVertexBuffer</strong>, things go pear-shaped. Shapes are missing completely or missing bits, and they bleed into each other. The results of the drawing code above look like this:   <br>
+However, when I switch to passing my vertex data using <strong>setVertexBuffer</strong>, things go pear-shaped. Shapes are missing completely or missing bits, and they bleed into each other. The results of the drawing code above look like this: <br>
 ￼
 <img src=""https://i.sstatic.net/ESjGf6ZP.jpg"" alt=""Bad image rendered using setVertexBuffer"" /></p>
 <p>If I only draw the large circle or the thick line, it comes out correctly. If I try to only draw a red square, only one of its triangles draws. If I try to draw just the one large circle and thick line, the results are as shown above. If I uncomment the other drawing code above, it also yields the image above. The red square and concentric circles are completely missing.</p>
-<p>Here is my shader code, which doesn't need to change based on how I pass the vertex data:  </p>
+<p>Here is my shader code, which doesn't need to change based on how I pass the vertex data:</p>
 <pre><code>//
 //  Shaders.metal
 //  DrawingApp
@@ -329647,7 +329647,7 @@ fragment float4 fragment_main(VertexOut in [[stage_in]],
     }
 }
 </code></pre>
-<p>I'm currently creating a vertex buffer once when I create my renderer, making it big enough for my largest array of vertexes. I then copy the vertex data into it before each call to <code>drawPrimitives</code>.  My renderer's init method looks like this:</p>
+<p>I'm currently creating a vertex buffer once when I create my renderer, making it big enough for my largest array of vertexes. I then copy the vertex data into it before each call to <code>drawPrimitives</code>.My renderer's init method looks like this:</p>
 <pre><code>    init(drawingInfo: Binding&lt;DrawingInfo&gt;) {
         self.drawingInfo = drawingInfo
         device = MTLCreateSystemDefaultDevice()
@@ -329672,7 +329672,7 @@ fragment float4 fragment_main(VertexOut in [[stage_in]],
         makePipeline()
     }
 </code></pre>
-<p>And my renderer's <code>draw()</code> method  look like this:  </p>
+<p>And my renderer's <code>draw()</code> method  look like this: </p>
 <pre><code>    func draw(in view: MTKView) {
         
         enum ArrowHeadDirection {
@@ -329878,7 +329878,7 @@ fragment float4 fragment_main(VertexOut in [[stage_in]],
     }
 </code></pre>
 <p><strong>Tons</strong> of code, I know. Sorry. I'm not sure what I can leave out and still describe the problem thoroughly.</p>
-<p>  ## The questions: ##</p>
+<p>## The questions: ##</p>
 <p>Why doesn't my code work? If I only draw a single circle or single thick line using <code>setVertexBuffer</code>, it <strong>does</strong> work,
 Can you send data to your shader with combination of  <code>setVertexBuffer</code> and setVertexBytes? And how do you deal with rendering an image whose vertex data changes and grows over time?</p>
 <p>You can see the whole test project on Github at <a href=""https://github.com/DuncanMC/DrawingApp.git"" rel=""nofollow noreferrer"">https://github.com/DuncanMC/DrawingApp.git</a></p>

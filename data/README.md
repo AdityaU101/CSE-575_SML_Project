@@ -2,9 +2,11 @@
 
 Dataset matching the Stack Exchange Data Explorer-style query below, exported as CSV for local ML / research use (question routing, quality assessment, etc.).
 
-## File
+## Files
 
-- `stackoverflow_questions_2023plus.csv` — **10,000** Stack Overflow questions
+- `stackoverflow_questions_2023plus.csv` — **10,000** Stack Overflow questions (full bodies; ~25MB — load with pandas, don’t open in the editor)
+- `stackoverflow_questions_preview_100.csv` — first 100 rows with truncated bodies (safe to open in Cursor)
+- `stackoverflow_questions_metadata.csv` — all 10,000 rows **without** `Body` (~1.7MB)
 
 ## Columns
 

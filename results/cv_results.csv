@@ -1,0 +1,10 @@
+Model,Features,CV F1 (mean),CV F1 (std),Best params,Time (s)
+Logistic Regression,text,0.5510651008672637,0.019891924005322567,{'C': 0.01},9.2
+Naive Bayes,text,0.5196657990073154,0.01831867439051922,"{'alpha': 0.1, 'fit_prior': False}",10.2
+Random Forest,text,0.5202729510293096,0.020267152250688248,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 5}",13.2
+Logistic Regression,structural,0.6654103138877121,0.008962337541220286,{'C': 0.1},0.4
+Naive Bayes,structural,0.6164005926904147,0.014336903291173,{'var_smoothing': 0.1},0.3
+Random Forest,structural,0.64923549307082,0.010098693662476056,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 5}",5.6
+Logistic Regression,combined,0.6687945529367461,0.011380548318855805,{'C': 0.1},9.2
+Naive Bayes,combined,0.6008590344932723,0.01740143456202872,"{'alpha': 0.1, 'fit_prior': False}",10.8
+Random Forest,combined,0.6297980689385869,0.010291586409170233,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 5}",13.6

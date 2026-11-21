@@ -1,10 +1,58 @@
-Model,Features,CV F1 (mean),CV F1 (std),Best params,Time (s)
-Logistic Regression,text,0.5510651008672637,0.019891924005322567,{'C': 0.01},9.2
-Naive Bayes,text,0.5196657990073154,0.01831867439051922,"{'alpha': 0.1, 'fit_prior': False}",10.2
-Random Forest,text,0.5202729510293096,0.020267152250688248,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 5}",13.2
-Logistic Regression,structural,0.6654103138877121,0.008962337541220286,{'C': 0.1},0.4
-Naive Bayes,structural,0.6164005926904147,0.014336903291173,{'var_smoothing': 0.1},0.3
-Random Forest,structural,0.64923549307082,0.010098693662476056,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 5}",5.6
-Logistic Regression,combined,0.6687945529367461,0.011380548318855805,{'C': 0.1},9.2
-Naive Bayes,combined,0.6008590344932723,0.01740143456202872,"{'alpha': 0.1, 'fit_prior': False}",10.8
-Random Forest,combined,0.6297980689385869,0.010291586409170233,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 5}",13.6
+Suite,Model,Features,CV ROC-AUC (mean),CV ROC-AUC (std),Best params,Time (s)
+primary_normal_random,Logistic Regression,text,0.6390199807996801,0.015587266143692484,{'C': 0.5},11.8
+primary_normal_random,Naive Bayes,text,0.6382600050363461,0.017367458492418126,"{'alpha': 1.0, 'fit_prior': True}",14.1
+primary_normal_random,Random Forest,text,0.6369871959003974,0.016389121329550074,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",14.6
+primary_normal_random,Logistic Regression,struct,0.6033076240540118,0.016710198204634784,{'C': 5.0},0.3
+primary_normal_random,Naive Bayes,struct,0.5826417123194977,0.011168964650690217,{'var_smoothing': 0.1},0.2
+primary_normal_random,Random Forest,struct,0.5930226739108756,0.014996989321710806,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",3.5
+primary_normal_random,Logistic Regression,tags,0.6473203587385542,0.009742048546542351,{'C': 5.0},0.3
+primary_normal_random,Naive Bayes,tags,0.6064937291390662,0.020568664524434007,"{'alpha': 1.0, 'fit_prior': True}",0.4
+primary_normal_random,Random Forest,tags,0.6457557660827264,0.010844048831520035,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 1}",2.0
+primary_normal_random,Logistic Regression,text+struct,0.6490952226878568,0.022389508648070794,{'C': 1.0},12.7
+primary_normal_random,Naive Bayes,text+struct,0.643884607375583,0.01547840912635899,"{'alpha': 1.0, 'fit_prior': True}",15.2
+primary_normal_random,Random Forest,text+struct,0.6403839225879163,0.01056623990533453,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",14.8
+primary_normal_random,Logistic Regression,all,0.675468202476089,0.01646308871255028,{'C': 0.5},12.9
+primary_normal_random,Naive Bayes,all,0.6572994656559766,0.02025503193021299,"{'alpha': 1.0, 'fit_prior': True}",14.8
+primary_normal_random,Random Forest,all,0.6489812421285682,0.011553007222714394,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",14.9
+primary_normal_chrono,Logistic Regression,text,0.6460192040662454,0.008381986047960945,{'C': 0.1},10.2
+primary_normal_chrono,Naive Bayes,text,0.641814687842577,0.00865106611257422,"{'alpha': 1.0, 'fit_prior': True}",14.5
+primary_normal_chrono,Random Forest,text,0.6407802070998789,0.005869873646328072,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",14.3
+primary_normal_chrono,Logistic Regression,struct,0.6078028571322277,0.015813598270595704,{'C': 5.0},0.2
+primary_normal_chrono,Naive Bayes,struct,0.5894182718847147,0.011822964670948939,{'var_smoothing': 0.1},0.2
+primary_normal_chrono,Random Forest,struct,0.5996615905919802,0.018113226025956716,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 5}",3.5
+primary_normal_chrono,Logistic Regression,tags,0.6629149300868281,0.0244585193486873,{'C': 0.5},0.3
+primary_normal_chrono,Naive Bayes,tags,0.6111048235199078,0.012595776828890147,"{'alpha': 1.0, 'fit_prior': False}",0.4
+primary_normal_chrono,Random Forest,tags,0.6567183207268533,0.020850806027135523,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",1.8
+primary_normal_chrono,Logistic Regression,text+struct,0.6580755790016717,0.02203472281453874,{'C': 1.0},12.8
+primary_normal_chrono,Naive Bayes,text+struct,0.6487439957120961,0.00826097670328907,"{'alpha': 1.0, 'fit_prior': True}",15.3
+primary_normal_chrono,Random Forest,text+struct,0.6525837238755678,0.009610349549816159,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",14.6
+primary_normal_chrono,Logistic Regression,all,0.6878149228411137,0.02516141814755467,{'C': 0.5},12.8
+primary_normal_chrono,Naive Bayes,all,0.6612874234948224,0.011877762641304796,"{'alpha': 1.0, 'fit_prior': True}",15.5
+primary_normal_chrono,Random Forest,all,0.6616874591210612,0.009131162331200022,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",14.8
+secondary_all_posts,Logistic Regression,text,0.6995290037554931,0.014275447744200262,{'C': 0.5},14.3
+secondary_all_posts,Naive Bayes,text,0.6749236376774185,0.01588223587781349,"{'alpha': 0.1, 'fit_prior': True}",21.4
+secondary_all_posts,Random Forest,text,0.6958815188420273,0.01617005342695779,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",23.7
+secondary_all_posts,Logistic Regression,struct,0.6819537400687098,0.014548966877846308,{'C': 0.01},0.4
+secondary_all_posts,Naive Bayes,struct,0.6740985255524399,0.008766533298844637,{'var_smoothing': 0.1},0.3
+secondary_all_posts,Random Forest,struct,0.6789314111550969,0.015329890845079032,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 5}",5.8
+secondary_all_posts,Logistic Regression,tags,0.7877775153690854,0.013216294680225034,{'C': 0.5},0.4
+secondary_all_posts,Naive Bayes,tags,0.7784994589055396,0.012541196662305161,"{'alpha': 1.0, 'fit_prior': False}",0.6
+secondary_all_posts,Random Forest,tags,0.7860689653507221,0.014929561222815949,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",3.1
+secondary_all_posts,Logistic Regression,text+struct,0.709973252102458,0.012781224033248419,{'C': 1.0},19.8
+secondary_all_posts,Naive Bayes,text+struct,0.6889519112931713,0.013927639246173537,"{'alpha': 0.1, 'fit_prior': True}",28.2
+secondary_all_posts,Random Forest,text+struct,0.7048175568072252,0.013803798981593889,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 1}",23.0
+secondary_all_posts,Logistic Regression,all,0.7978053497466018,0.007431731543549384,{'C': 0.5},19.2
+secondary_all_posts,Naive Bayes,all,0.7602023704509768,0.007374569093715952,"{'alpha': 0.5, 'fit_prior': True}",24.2
+secondary_all_posts,Random Forest,all,0.7436821182385271,0.01275815774234626,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",23.6
+sensitivity_drop_zero,Logistic Regression,text,0.6930803800466373,0.007515596036458216,{'C': 0.5},8.3
+sensitivity_drop_zero,Naive Bayes,text,0.6807850873971644,0.01219983891887275,"{'alpha': 0.5, 'fit_prior': True}",11.8
+sensitivity_drop_zero,Random Forest,text,0.6895917716973464,0.010541325359810456,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",10.7
+sensitivity_drop_zero,Logistic Regression,struct,0.654402375091948,0.01784617914006231,{'C': 0.1},0.2
+sensitivity_drop_zero,Naive Bayes,struct,0.6489549244857816,0.019615412548342516,{'var_smoothing': 1e-09},0.2
+sensitivity_drop_zero,Random Forest,struct,0.6399303001130362,0.017371744443360322,"{'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 5}",2.9
+sensitivity_drop_zero,Logistic Regression,text+struct,0.710509019058693,0.01045027970585257,{'C': 1.0},9.5
+sensitivity_drop_zero,Naive Bayes,text+struct,0.6905912469125279,0.0090950557737545,"{'alpha': 0.1, 'fit_prior': True}",12.2
+sensitivity_drop_zero,Random Forest,text+struct,0.7051372814094922,0.0125562024847067,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 5}",11.0
+sensitivity_drop_zero,Logistic Regression,all,0.7253718058762952,0.012175120979036565,{'C': 1.0},9.7
+sensitivity_drop_zero,Naive Bayes,all,0.7160113886521646,0.0036017293924778407,"{'alpha': 0.5, 'fit_prior': True}",12.0
+sensitivity_drop_zero,Random Forest,all,0.7064271071401127,0.00720336970930201,"{'max_depth': None, 'max_features': 'sqrt', 'min_samples_leaf': 1}",48.3

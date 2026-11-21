@@ -1,7 +1,6 @@
-# Predicting Stack Overflow Question Quality Using Machine Learning and Natural Language Processing
+# Predicting Stack Overflow Question Quality Using Machine Learning and NLP
 
-**CSE 575 – Statistical Machine Learning**  
-**Project Area:** P11 – Learning from Community Question Answering (CQA) Data  
+**CSE 575 – Statistical Machine Learning** · **P11: Learning from CQA Data**  
 **Instructor:** Yingzhen Yang
 
 ## Team Members
@@ -18,55 +17,44 @@
 
 ## 1. Introduction
 
-Community Question Answering (CQA) platforms such as Stack Overflow let users ask technical questions and receive answers from other community members. Large volumes of questions are posted daily, and not all of them are equally useful to the community. Automatically estimating question quality can help with moderation, ranking, and guidance for askers.
+Stack Overflow receives a large volume of questions. Automatically estimating quality from posting-time content could support moderation and asker guidance. Among P11 directions (routing, tagging, quality, churn), this project focuses on **question quality assessment**.
 
-This project focuses on one of the research directions listed under P11: **identifying good versus bad questions**. We build and evaluate machine learning classifiers that predict whether a Stack Overflow question is high- or low-quality using only information available at posting time (title, body text, tags, and structural cues). Community vote scores define labels; score and other engagement signals are **not** used as features, to avoid target leakage.
+**Research question:** Can textual and structural features predict community-judged quality *without confusing quality with post type*?
 
-**Research question:** *Can textual and structural features of a Stack Overflow question accurately predict its community-judged quality?*
+An important finding of this work is methodological: models trained on all recent posts largely detect Stack Overflow **opinion-type** questions (`advice`, `best-practices`, `tooling-recommendation`) rather than writing quality. We therefore redefine the **primary task** as quality prediction on **normal Q&A questions only**, keep tags as a separate feature family, and treat **ROC-AUC** as the headline metric.
 
-**Main findings (held-out test set):**
-- Best model: **Logistic Regression** with **combined** (text + structural) features  
-- **F1 = 0.669**, **ROC-AUC = 0.795**, **Accuracy = 0.691**  
-- Clear lift over a stratified dummy baseline (**F1 = 0.364**, +0.306)  
-- Structural/tag features alone already beat pure TF-IDF text; combining both is best overall  
+### Headline results (primary: normal questions)
 
-Source code: `Question_Quality_Classifier.ipynb`. Figures: `figures/`. Metrics: `results/`.
+| Model | Features | Test ROC-AUC | Test F1 |
+|-------|----------|--------------|---------|
+| Logistic Regression | **text+struct** (no tags) | **0.671** | 0.620 |
+| Logistic Regression | all (text+struct+tags) | **0.694** | 0.621 |
+| Dummy (all-high / majority) | — | 0.500 | 0.671 |
+
+All-high F1 looks competitive only because classes are ~balanced; **AUC shows those baselines are uninformative**. Chronological evaluation drops AUC to ~0.64–0.65.
 
 ---
 
 ## 2. Problem Description
 
-### 2.1 Background
+### 2.1 Label
 
-The P11 project description identifies several CQA problems (question routing, Q&A tagging, quality assessment, and user churn). Following our proposal, we concentrate on **quality assessment of questions**, using Stack Overflow data with question text and voting information.
+High if `Score >= 1`, low if `Score <= 0`. Leakage-safe features exclude Score, views, answers, comments, favorites, accepted-answer id, reputation, and ids/dates. `FavoriteCount` is always 0 in this API export and is unused.
 
-Related work informing the design includes Anderson et al. (KDD 2012) on value in Stack Overflow activity, Yao et al. (KDD 2014) on long-term impact of CQA posts, and related CQA routing/churn studies listed in the proposal.
-
-### 2.2 Formal task
-
-Given a question \(x\) with title, HTML body, and tags, predict label
-
-\[
-y = \begin{cases}
-1 \text{ (high quality)} & \text{if Score} \ge 1 \\
-0 \text{ (low quality)} & \text{if Score} \le 0
-\end{cases}
-\]
-
-**Leakage-safe feature policy:** `Score`, `ViewCount`, `AnswerCount`, `CommentCount`, `FavoriteCount`, `AcceptedAnswerId`, `LastEditDate`, asker reputation, and IDs/dates are excluded from predictors.
-
-### 2.3 Dataset
+### 2.2 Dataset
 
 | Item | Detail |
 |------|--------|
-| Source | Stack Overflow questions via Stack Exchange API |
-| File | `data/stackoverflow_questions_2023plus.csv` |
-| Raw size | 10,000 questions, 14 columns |
-| After cleaning | 9,011 questions (removed 989 posts younger than 30 days so scores can stabilize) |
-| Train / test | 7,208 / 1,803 (stratified 80/20) |
-| Class balance | ~37.8% high quality, ~62.2% low quality |
+| File | `data/stackoverflow_questions_2023plus.csv` (filename is historical) |
+| Actual window | 2026-04 to 2026-10 Stack Overflow questions |
+| Raw size | 10,000 questions |
+| Age filter | ≥ **60 days** before snapshot date 2026-10-27 → **8,077** kept |
+| Opinion-type share | 2,461 / 8,077 (**30.5%**); high-rate only **4.5%** |
+| Normal Q&A | 5,616; high-rate **50.5%** |
 
-Attributes used: title, body (HTML), tags, score (label only), creation date (age filter only).
+### 2.3 Temporal drift
+
+Opinion-type share falls from ~35–38% (Apr–Jun) to ~10% (Jul–Oct), while the high-quality rate rises. A random split mixes regimes; we also evaluate a chronological 80/20 split.
 
 ---
 
@@ -74,145 +62,89 @@ Attributes used: title, body (HTML), tags, score (label only), creation date (ag
 
 ### 3.1 Preprocessing
 
-1. Drop duplicate / empty title–body rows  
-2. Drop questions younger than 30 days relative to the data snapshot  
-3. Parse HTML with BeautifulSoup → prose text, code text, and structure counts (code blocks, links, lists, paragraphs, etc.)
+Deduplicate; drop empty title/body; parse HTML into prose, **code text**, and structure counts; apply a conservative 60-day age filter (limitation: snapshot is the newest post date in the file).
 
-### 3.2 Features
+### 3.2 Feature sets (separated)
 
-**Textual:** TF-IDF (unigrams + bigrams) on title (max 5,000 features) and body prose (max 20,000 features).
+| Set | Contents |
+|-----|----------|
+| text | TF-IDF (1–2 grams) on title + body prose + code text |
+| struct | lengths, code/link/list/style counts (**no tags**) |
+| tags | binary tag indicators |
+| text+struct | content/writing signal |
+| all | text + struct + tags |
 
-**Structural / style:** title/body length, question-mark and wh-word title cues, code presence and code ratio, links, images, paragraphs, lists, tags count, sentence length, uppercase ratio, exclamation count, error-keyword mentions, plus binary tag indicators.
+### 3.3 Models and selection
 
-**Feature sets compared:** (1) text only, (2) structural only, (3) combined.
+Logistic Regression, Naive Bayes, Random Forest; hyperparameters via **5-fold stratified GridSearchCV maximizing ROC-AUC** on train only. Baselines: majority, stratified, **all-high**.
 
-### 3.3 Models
+### 3.4 Suites
 
-| Model | Notes |
-|-------|--------|
-| Logistic Regression | Balanced class weights; \(C\) tuned |
-| Naive Bayes | MultinomialNB for text/combined; GaussianNB for structural |
-| Random Forest | 200 trees, balanced subsample; depth / leaf size tuned |
-| Dummy baselines | Most-frequent and stratified |
-
-Training uses **5-fold stratified GridSearchCV** on the training set (optimize F1). Final metrics are reported on the held-out test set only.
-
-### 3.4 Evaluation metrics
-
-Accuracy, Precision, Recall, F1 (positive = high quality), Macro F1, ROC-AUC, confusion matrices, and ROC curves.
+1. **Primary:** normal questions, random stratified 80/20  
+2. **Chronological:** normal questions, oldest 80% → newest 20%  
+3. **Secondary:** all posts (documents tag confound)  
+4. **Sensitivity:** normal questions with Score==0 removed (≥1 vs ≤−1)
 
 ---
 
 ## 4. Results and Analysis
 
-### 4.1 Cross-validation (train)
+### 4.1 Primary (normal questions)
 
-| Model | Features | CV F1 (mean) | Best params (abbrev.) |
-|-------|----------|--------------|------------------------|
-| Logistic Regression | text | 0.551 | C=0.01 |
-| Naive Bayes | text | 0.520 | α=0.1, no prior |
-| Random Forest | text | 0.520 | depth=20, leaf=5 |
-| Logistic Regression | structural | 0.665 | C=0.1 |
-| Naive Bayes | structural | 0.616 | var_smoothing=0.1 |
-| Random Forest | structural | 0.649 | depth=20, leaf=5 |
-| **Logistic Regression** | **combined** | **0.669** | **C=0.1** |
-| Naive Bayes | combined | 0.601 | α=0.1, no prior |
-| Random Forest | combined | 0.630 | depth=20, leaf=5 |
+CV selects **Logistic Regression | all** (test AUC **0.694**, F1 0.621).  
+The best **tag-free** model is **LR | text+struct** (AUC **0.671**, F1 0.620).
 
-### 4.2 Held-out test performance
+On normal questions, tags help modestly but no longer dominate. Pure `struct` (AUC ~0.63) is weaker than text (~0.65). The old claim that “structural features dominate text” was driven by **tags bundled into the structural set** plus opinion posts.
 
-| Model | Features | Acc | Prec | Rec | F1 | ROC-AUC |
-|-------|----------|-----|------|-----|-----|---------|
-| Dummy (most frequent) | – | 0.622 | 0.000 | 0.000 | 0.000 | 0.500 |
-| Dummy (stratified) | – | 0.516 | 0.362 | 0.365 | 0.364 | 0.487 |
-| LR | text | 0.624 | 0.503 | 0.562 | 0.530 | 0.674 |
-| NB | text | 0.615 | 0.491 | 0.523 | 0.507 | 0.649 |
-| RF | text | 0.642 | 0.530 | 0.479 | 0.503 | 0.667 |
-| LR | structural | 0.676 | 0.547 | 0.837 | 0.662 | 0.791 |
-| NB | structural | 0.659 | 0.539 | 0.685 | 0.603 | 0.721 |
-| RF | structural | 0.673 | 0.546 | 0.801 | 0.649 | 0.765 |
-| **LR** | **combined** | **0.691** | **0.562** | **0.827** | **0.669** | **0.795** |
-| NB | combined | 0.664 | 0.551 | 0.610 | 0.579 | 0.732 |
-| RF | combined | 0.654 | 0.532 | 0.710 | 0.608 | 0.742 |
+Bootstrap (LR): `text+struct − text` ΔAUC ≈ +0.022, 95% CI [0.002, 0.043]; `all − text+struct` ΔAUC ≈ +0.022, CI [0.001, 0.043].
 
-**Best configuration:** Logistic Regression + combined features  
-- Low quality: precision 0.853, recall 0.608, F1 0.710  
-- High quality: precision 0.562, recall 0.827, F1 0.669  
-- Macro F1 = 0.690  
+### 4.2 Fair baselines
 
-### 4.3 Comparative observations
+With ~50% high-quality normal questions, **all-high F1 = 0.671** beats most model F1s while AUC = 0.5. **ROC-AUC is the fair headline.**
 
-1. **Structural features dominate text.** Pure TF-IDF tops out near F1 ≈ 0.53; structural reaches ≈ 0.66.  
-2. **Combining text + structure is best** for Logistic Regression (F1 0.669, AUC 0.795).  
-3. **Logistic Regression** is strongest overall and remains interpretable via coefficients.  
-4. Random Forest is competitive on structural features but does not beat LR on combined.  
-5. All real models beat the stratified dummy F1 (0.364) by a large margin.
+### 4.3 Chronological split
 
-### 4.4 Interpretation
+Best chrono test AUC ≈ **0.648** (`text+struct`). Performance drops under time shift.
 
-Coefficient analysis for LR (combined) shows:
-- Strong **negative** associations for meta / advice-style tags (`advice`, `best-practices`, `tooling-recommendation`), consistent with Stack Overflow’s preference against opinion/advice questions.  
-- Strong **positive** associations for many concrete technology tags (e.g., `c`, `r`, `powershell`, `java`).  
-- Structural cues (code presence, formatting) contribute alongside tags.
+### 4.4 Secondary: all posts (confound)
 
-Error analysis shows confident false positives are often well-formatted but low-voted posts (quality ≠ formatting alone), and false negatives include high-score posts with sparse structural signals.
+| Features (LR) | Test ROC-AUC |
+|---------------|--------------|
+| tags alone | **0.806** |
+| text+struct | 0.748 |
+| all | **0.824** |
 
-### 4.5 Figures
+Tags alone nearly match the full model — the classic post-type confound.
 
-See `figures/`:
-- `01_score_distribution.png`, `02_class_balance.png` – EDA / labels  
-- `03_structural_by_class.png` – feature differences by class  
-- `04_test_metrics.png`, `05_confusion_matrices.png`, `06_roc_combined.png` – evaluation  
-- `07_featureset_heatmap.png` – text vs structural vs combined  
-- `08_lr_coefficients.png`, `09_lr_structural.png` – interpretation  
+### 4.5 Sensitivity (drop Score 0)
+
+Removing unvoted questions raises LR `all` AUC to **0.726**. Labels remain a noisy proxy for “quality.”
 
 ---
 
 ## 5. Conclusions and Future Work
 
-### 5.1 Conclusions
+1. Posting-time text + structure predict normal-question quality above chance (**AUC ≈ 0.67** without tags; ≈ 0.69 with tags).  
+2. Without separating tags and filtering opinion-types, models mostly learn **post type**, not quality.  
+3. Prefer **ROC-AUC** over F1-vs-stratified-dummy for reporting.  
+4. Random splits overstate stability; chronological AUC falls to ~0.64.  
+5. Score-based labels are noisy (especially Score 0).
 
-1. Textual and structural features **can** predict Stack Overflow question quality substantially better than chance.  
-2. **Structural + tag features** carry most of the signal; TF-IDF alone is weaker.  
-3. **Logistic Regression (combined)** is the recommended model for this dataset: best F1/AUC and clear interpretability.  
-4. Quality also depends on community dynamics not captured by posting-time text alone, so performance remains moderate (~0.67 F1 / ~0.80 AUC).  
-5. Strict leakage control is essential; engagement and score must not enter the feature set.
-
-### 5.2 Limitations
-
-- Binary threshold on Score is a proxy, not ground-truth “goodness.”  
-- Subset of ~9k recent questions; may not generalize to older dumps or other sites.  
-- Asker history / answer quality / topic popularity not modeled (by design for leakage safety).  
-- Class imbalance (~38% high) affects precision on the high-quality class.
-
-### 5.3 Future work
-
-- Multi-class or ordinal quality (closed reasons, accepted answers).  
-- Transformer embeddings (e.g., CodeBERT) instead of TF-IDF.  
-- Calibrated ranking for moderation queues.  
-- Extend to answer quality or question routing (other P11 directions).
-
----
+**Future work:** ordinal/closure labels, transformer embeddings, asker history with leakage control, multi-task opinion-vs-quality models.
 
 ## References
 
-1. A. Anderson et al., “Discovering value from community activity on focused question answering sites: A case study of Stack Overflow,” KDD, 2012.  
-2. W. Li et al., “G-Finder: Routing programming questions closer to the experts,” ACM SIGPLAN Notices, 2010.  
-3. Y. Yao et al., “Predicting long-term impact of CQA posts: A comprehensive viewpoint,” KDD, 2014.  
-4. J. S. Pudipeddi et al., “User churn in focused question answering sites,” WWW, 2014.  
-5. Stack Exchange Data Explorer / Stack Exchange API.  
+1. Anderson et al., KDD 2012.  
+2. Li et al., 2010 — G-Finder.  
+3. Yao et al., KDD 2014.  
+4. Pudipeddi et al., WWW 2014.  
+5. Stack Exchange API.
 
----
-
-## Appendix: How to reproduce
+## Reproduce
 
 ```bash
-cd CSE-575_SML_Project
-python3 -m venv .venv
-source .venv/bin/activate
+python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-jupyter nbconvert --to notebook --execute Question_Quality_Classifier.ipynb \
-  --output Question_Quality_Classifier.ipynb --ExecutePreprocessor.timeout=3600
+MPLBACKEND=Agg python scripts/run_rigorous_pipeline.py
+python scripts/build_deliverables.py
 ```
-
-Outputs are written to `figures/` and `results/cv_results.csv`, `results/test_results.csv`.

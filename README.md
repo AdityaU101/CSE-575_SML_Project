@@ -1,62 +1,60 @@
 # CSE-575_SML_Project
 
 **P11 – Learning from Community Question Answering (CQA) data**  
-Stack Overflow **question-quality classifier** (ML + NLP).
+Stack Overflow **question-quality classifier** (ML + NLP), revised to separate **quality** from **post-type** effects.
+
+## Headline result (primary task)
+
+**Population:** normal Q&A questions only (exclude `advice` / `best-practices` / `tooling-recommendation`)  
+**Metric:** ROC-AUC (not F1 vs a stratified dummy)
+
+| Model | Features | Test ROC-AUC | Test F1 |
+|---|---|---:|---:|
+| Logistic Regression | text + structure (no tags) | **0.671** | 0.620 |
+| Logistic Regression | all (text + structure + tags) | **0.694** | 0.621 |
+| Dummy (all-high) | — | 0.500 | 0.671 |
+
+All-high F1 looks strong only because classes are ~balanced; AUC shows it is uninformative.
 
 ## Final deliverables
 
 | File | Description |
 |---|---|
-| [`Final_Report.pdf`](Final_Report.pdf) | Course final report (intro → results → conclusions) |
-| [`Final_Report.md`](Final_Report.md) | Same report in Markdown |
-| [`Presentation.pdf`](Presentation.pdf) | ~8-slide presentation deck |
-| [`Question_Quality_Classifier.ipynb`](Question_Quality_Classifier.ipynb) | Executed end-to-end pipeline |
-| [`Question_Quality_Classifier.html`](Question_Quality_Classifier.html) | HTML export of the notebook |
-| [`figures/`](figures/) | All experiment plots (EDA, metrics, ROC, coefficients) |
-| [`results/cv_results.csv`](results/cv_results.csv) | Cross-validation scores |
-| [`results/test_results.csv`](results/test_results.csv) | Held-out test metrics |
+| [`Final_Report.pdf`](Final_Report.pdf) | Course final report |
+| [`Final_Report.md`](Final_Report.md) | Markdown report |
+| [`Presentation.pdf`](Presentation.pdf) | 9-slide presentation |
+| [`Question_Quality_Classifier.ipynb`](Question_Quality_Classifier.ipynb) | Narrative notebook (runs pipeline) |
+| [`Question_Quality_Classifier.html`](Question_Quality_Classifier.html) | HTML export |
+| [`scripts/run_rigorous_pipeline.py`](scripts/run_rigorous_pipeline.py) | Full experiment code |
+| [`figures/`](figures/) | Primary + secondary plots |
+| [`results/`](results/) | `summary.json`, CV/test tables |
 
-### Headline result
+## What the revision fixed
 
-**Logistic Regression + combined features**  
-F1 **0.669** · ROC-AUC **0.795** · Accuracy **0.691**  
-(vs stratified dummy F1 **0.364**)
-
-## Dataset
-
-| File | Description |
-|---|---|
-| `data/stackoverflow_questions_2023plus.csv` | Full dataset (10k questions, HTML bodies) |
-| `data/stackoverflow_questions_preview_100.csv` | Small preview for browsing in the editor |
-| `data/stackoverflow_questions_metadata.csv` | All rows without `Body` |
-
-## Notebook pipeline
-
-1. Load & explore  
-2. Preprocess / HTML parse  
-3. Label quality from `Score` (no leakage)  
-4. TF-IDF + structural features  
-5. Logistic Regression, Naive Bayes, Random Forest  
-6. Test-set evaluation + interpretation  
+1. Opinion-type posts were ~30% of the filtered data and almost never high-scoring → tags dominated earlier models  
+2. Tags are no longer buried inside “structural” features  
+3. Model selection uses **CV ROC-AUC** only (no test peeking)  
+4. Baselines include **all-high**, not only stratified dummy  
+5. Chronological split + drop-Score-0 sensitivity + all-posts confound suite  
+6. 60-day age filter; code text used in TF-IDF; no hard-coded user paths  
 
 ## Setup / reproduce
 
 ```bash
 cd CSE-575_SML_Project
 python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 pip install -r requirements.txt
-python -m ipykernel install --user --name=cse575-sml --display-name="CSE575 SML (.venv)"
+
+MPLBACKEND=Agg python scripts/run_rigorous_pipeline.py
+python scripts/build_deliverables.py
+# optional: refresh notebook outputs without re-training
+SKIP_RERUN=1 jupyter nbconvert --to notebook --execute Question_Quality_Classifier.ipynb \
+  --output Question_Quality_Classifier.ipynb
 ```
 
-Then open the notebook, select the **CSE575 SML (.venv)** kernel, and **Run All**.
+Or open the notebook, select the project kernel, and **Run All** (~8–15 minutes).
 
-Or from the CLI:
+## Dataset note
 
-```bash
-MPLBACKEND=Agg jupyter nbconvert --to notebook --execute Question_Quality_Classifier.ipynb \
-  --output Question_Quality_Classifier.ipynb --ExecutePreprocessor.timeout=3600
-python scripts/build_deliverables.py   # rebuild Final_Report.pdf + Presentation.pdf
-```
-
-Outputs are written to `figures/` and `results/`.
+`data/stackoverflow_questions_2023plus.csv` is a historical filename. The export is Stack Overflow questions from **2026-04 to 2026-10**. `FavoriteCount` is always 0 in this API export.

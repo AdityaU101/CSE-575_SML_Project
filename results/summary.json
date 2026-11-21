@@ -1,0 +1,128 @@
+{
+  "data_note": "Export covers Stack Overflow questions from 2026-04 to 2026-10 (filename is historical).",
+  "snapshot_date": "2026-10-27",
+  "min_age_days": 60,
+  "n_after_age_filter": 8077,
+  "n_normal": 5616,
+  "n_opinion": 2461,
+  "opinion_high_rate": 0.04510361641609102,
+  "normal_high_rate": 0.5051638176638177,
+  "favorite_count_always_zero": true,
+  "primary_best_by_cv": {
+    "model": "Logistic Regression",
+    "features": "all"
+  },
+  "primary_best_test": {
+    "Accuracy": 0.6423487544483986,
+    "Precision": 0.6680161943319838,
+    "Recall": 0.5809859154929577,
+    "F1": 0.6214689265536724,
+    "Macro F1": 0.6412572288754871,
+    "ROC-AUC": 0.6936271405410883
+  },
+  "primary_baselines": [
+    {
+      "Model": "Dummy (majority)",
+      "F1": 0.6713947990543735,
+      "ROC-AUC": 0.5
+    },
+    {
+      "Model": "Dummy (stratified)",
+      "F1": 0.5061728395061729,
+      "ROC-AUC": 0.5017415644948829
+    },
+    {
+      "Model": "Dummy (all-high)",
+      "F1": 0.6713947990543735,
+      "ROC-AUC": 0.5
+    }
+  ],
+  "chrono_best_by_cv": {
+    "model": "Logistic Regression",
+    "features": "all"
+  },
+  "chrono_best_test": {
+    "Accuracy": 0.5969750889679716,
+    "Precision": 0.6098807495741057,
+    "Recall": 0.6151202749140894,
+    "F1": 0.6124893071000855,
+    "Macro F1": 0.596328064115381,
+    "ROC-AUC": 0.6354313285400895
+  },
+  "secondary_all_best_by_cv": {
+    "model": "Logistic Regression",
+    "features": "all"
+  },
+  "secondary_all_best_test": {
+    "Accuracy": 0.7301980198019802,
+    "Precision": 0.5950617283950618,
+    "Recall": 0.8169491525423729,
+    "F1": 0.6885714285714286,
+    "Macro F1": 0.7252900810979414,
+    "ROC-AUC": 0.8237321174876929
+  },
+  "sensitivity_drop_zero_best_by_cv": {
+    "model": "Logistic Regression",
+    "features": "all"
+  },
+  "sensitivity_drop_zero_best_test": {
+    "Accuracy": 0.7170596393897365,
+    "Precision": 0.8611111111111112,
+    "Recall": 0.7640845070422535,
+    "F1": 0.8097014925373134,
+    "Macro F1": 0.6291750705929811,
+    "ROC-AUC": 0.7261115713891191
+  },
+  "bootstrap": {
+    "textstruct_minus_text": {
+      "delta_auc_mean": 0.022357047633380603,
+      "delta_auc_ci95": [
+        0.0022551328557751525,
+        0.042676927213205214
+      ],
+      "delta_f1_mean": 0.025117282969365735,
+      "delta_f1_ci95": [
+        -0.002894292758419539,
+        0.052661607730089516
+      ]
+    },
+    "all_minus_textstruct": {
+      "delta_auc_mean": 0.02232700637040749,
+      "delta_auc_ci95": [
+        0.0011059611485574438,
+        0.04320956338128109
+      ],
+      "delta_f1_mean": 0.0015241968953508154,
+      "delta_f1_ci95": [
+        -0.027211018912130652,
+        0.030090506926510597
+      ]
+    },
+    "tags_minus_textstruct": {
+      "delta_auc_mean": -0.007333811677745474,
+      "delta_auc_ci95": [
+        -0.045517656169529366,
+        0.029544554647669995
+      ],
+      "delta_f1_mean": -0.04965913639006709,
+      "delta_f1_ci95": [
+        -0.09161468196053593,
+        -0.010216089701363836
+      ]
+    }
+  },
+  "type_stats": [
+    {
+      "is_opinion": "Normal Q&A",
+      "n": 5616,
+      "high_rate": 0.5051638176638177,
+      "mean_score": 0.8306623931623932
+    },
+    {
+      "is_opinion": "Opinion-type",
+      "n": 2461,
+      "high_rate": 0.04510361641609102,
+      "mean_score": -0.18569687119057293
+    }
+  ]
+}

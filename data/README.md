@@ -2,6 +2,10 @@
 
 Dataset matching the Stack Exchange Data Explorer-style query below, exported as CSV for local ML / research use (question routing, quality assessment, etc.).
 
+**Date note:** The filename `..._2023plus.csv` is historical. This export contains questions from **2026-04-01 through 2026-10-27**.
+
+**API note:** `FavoriteCount` is always `0` in this export (not usable as a feature).
+
 ## Files
 
 - `stackoverflow_questions_2023plus.csv` — **10,000** Stack Overflow questions (full bodies; ~25MB — load with pandas, don’t open in the editor)
